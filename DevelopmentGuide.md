@@ -10,10 +10,9 @@
 yarn install
 ```
 
-
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+yarn storybook:serve
 ```
 
 ### Compiles and minifies for production
