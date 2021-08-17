@@ -16,7 +16,7 @@ export default {
         return {
           name: '',
           hex: '',
-          rbg: '',
+          rgb: '',
           cmyk: '',
           variable: ''
         }
