@@ -1,0 +1,67 @@
+@import '../../assets/variables';
+
+@function get-rgb($color) {  
+    @return unquote(red($color) + "-" + green($color) + "-" + blue($color));  
+   }
+
+:export {
+        //Primary
+        blueName: 'Blue';
+        blueVariable:unquote("$blue");
+        blueHex:$blue;
+        blueRgb:get-rgb($blue);
+        blueCmyk:0,0,0,85;
+
+        greyName:'Text Grey';
+        greyVariable:unquote("$grey");
+        greyHex:$grey;
+        greyRgb:get-rgb($grey);
+        greyCmyk:100,0,45,50;
+
+        //Secondary
+        redName:'Red';
+        redVariable:unquote("$red");
+        redHex:$red;
+        redRgb:get-rgb($red);
+        redCmyk: 0,61,91,18;
+
+        mediumBlueName:'Mid Blue';
+        mediumBlueVariable:unquote("$mediumBlue");
+        mediumBlueHex:$mediumBlue;
+        mediumBlueRgb:get-rgb($mediumBlue);
+        mediumBlueCmyk: 100,0,23,35;
+
+        //Status 
+        successName: 'Success';
+        successVariable:unquote("$success");
+        successHex:$success;
+        successRgb:get-rgb($success);
+        successCmyk: 41,0,34,38;
+
+        warningName: 'Warning';
+        warningVariable:unquote("$warning");
+        warningHex:$warning;
+        warningRgb:get-rgb($warning);
+        warningCmyk: 100,0,23,35;
+
+        dangerName: 'Danger';
+        dangerVariable:unquote("$danger");
+        dangerHex:$danger;
+        dangerRgb:get-rgb($danger);
+        dangerCmyk: 0,84,95,29;
+
+        //Line 
+        line1Name: 'Line Grey';
+        line1Variable:unquote("$lineColor1");
+        line1Hex:$lineColor1;
+        line1Rgb:get-rgb($lineColor1);
+        line1Cmyk: 41,0,34,38;
+
+        //Background
+        backgroundName: 'Light Grey';
+        backgroundVariable:unquote("$background");
+        backgroundHex:$background;
+        backgroundRgb:get-rgb($background);
+        backgroundCmyk: 0,0,340,3;
+  } 
+
