@@ -4,7 +4,7 @@
     <div class="color-info">
       <h3>{{ color.name }}</h3>
       <p class="mb-0"><em>Hex</em>: {{ color.hex }}</p>
-      <p class="mb-0"><em>RBG</em>: {{ color.rbg }}</p>
+      <p class="mb-0"><em>RGB</em>: {{ color.rgb }}</p>
       <p class="mb-0"><em>CMYK</em>: {{ color.cmyk }}</p>
       <p class="mb-0"><em>Sass Variable</em>: <span class="code">{{ color.variable }}</span></p>
     </div>
@@ -22,7 +22,7 @@ export default {
         return {
           name: '',
           hex: '',
-          rbg: '',
+          rgb: '',
           cmyk: '',
           variable: ''
         }

@@ -1,97 +1,100 @@
+import colorStyles from './colors-demo-styles.scss';
+
 export const primary = [
-  {
-    name: 'Purple',
-    hex: '#8300bf',
-    rbg: '131-0-191',
-    cmyk: '24, 75, 0, 25',
+  { 
+    name:colorStyles.blueName,
+    hex: colorStyles.blueHex,
+    rgb: colorStyles.blueRgb,
+    cmyk: colorStyles.blueCmyk,
     usage: 'Repeating major elements across the site like links and buttons',
-    variable: '$purple'
+    variable: colorStyles.blueVariable
   },
+  /* from old system
   {
     name: 'Dark Blue',
     hex: '#24245b',
-    rbg: '36-36-91',
+    rgb: '36-36-91',
     cmyk: '22, 22, 0, 64',
     usage: 'Repeating major elements across the site like heros, icons and header text',
     variable: '$darkBlue'
-  },
+  },*/
   {
-    name: 'Grey',
-    hex: '#303133',
-    rbg: '48-49-31',
-    cmyk: '6, 4, 0, 80',
+    name: colorStyles.greyName,
+    hex: colorStyles.greyHex,
+    rgb:colorStyles.greyRgb,
+    cmyk: colorStyles.greyCmyk,
     usage: 'Typography and icons',
-    variable: '$grey'
+    variable: colorStyles.greyVariable
   }
 ]
 
 export const secondary = [
   {
-    name: 'Light Purple',
-    hex: '#bc00fc',
-    rbg: '188-0-252',
-    cmyk: '25, 99, 0, 1',
+    name:colorStyles.redName,
+    hex: colorStyles.redHex,
+    rgb: colorStyles.redRgb,
+    cmyk: colorStyles.redCmyk,
     usage: 'Decorative elements such as illustrations',
-    variable: '$lightPurple'
+    variable: colorStyles.redVariable
   },
   {
-    name: 'Blue',
-    hex: '#0026ff',
-    rbg: '0-38-255',
-    cmyk: '25, 99, 0, 1',
+    name:colorStyles.mediumBlueName,
+    hex: colorStyles.mediumBlueHex,
+    rgb: colorStyles.mediumBlueRgb,
+    cmyk: colorStyles.mediumBlueCmyk,
     usage: 'Decorative elements such as illustrations',
-    variable: '$blue'
+    variable: colorStyles.mediumBlueVariable
   }
 ]
 
 export const status = [
   {
-    name: 'Success',
-    hex: '#5e9f69',
-    rbg: '94-159-105',
-    cmyk: '90, 0, 48, 10',
-    usage: 'Confirmation messages',
-    variable: '$success'
+    name:colorStyles.successName,
+    hex: colorStyles.successHex,
+    rgb: colorStyles.successRgb,
+    cmyk: colorStyles.successCmyk,
+    usage:'Confirmation messages',
+    variable: colorStyles.successVariable
   },
   {
-    name: 'Warning',
-    hex: '#ff8400',
-    rbg: '221-117-51',
-    cmyk: '0, 41, 67, 13',
+    name:colorStyles.warningName,
+    hex: colorStyles.warningHex,
+    rgb: colorStyles.warningRgb,
+    cmyk:colorStyles.warningCmyk,
     usage: 'To warn users of potentially harmful situation',
-    variable: '$warning'
+    variable: colorStyles.warningVariable
   },
   {
-    name: 'Danger',
-    hex: '#b51d09',
-    rbg: '181-29-9',
-    cmyk: '0, 60, 67, 29',
+    name:colorStyles.dangerName,
+    hex: colorStyles.dangerHex,
+    rgb: colorStyles.dangerRgb,
+    cmyk: colorStyles.dangerCmyk,
     usage: 'Error messages and confirmation for deletion',
-    variable: '$danger'
+    variable: colorStyles.dangerVariable
   }
 ]
 
 export const text = [
   {
-    name: '',
-    hex: '#303133',
-    rbg: '220-6-20',
-    cmyk: '1, 1, 0, 80',
-    usage: 'For body text',
-    variable: '$grey'
+    name:'',
+    hex: colorStyles.greyHex,
+    rgb:colorStyles.greyRgb,
+    cmyk: colorStyles.greyCmyk,
+    usage: 'Typography and icons',
+    variable: colorStyles.greyVariable
   },
-  {
+  { //From old system
     name: '',
     hex: '#606266',
-    rbg: '96-98-102',
+    rgb: '96-98-102',
     cmyk: '2, 2, 0, 60',
     usage: 'For footer text',
     variable: '$mediumGrey'
   },
-  {
+  { //From old system
     name: '',
     hex: '#909399',
-    rbg: '144-147-153',
+    rgb: '144-147-153',
     cmyk: '4, 2, 0, 60',
     usage: 'For labels and ghost text',
     variable: '$lightGrey'
@@ -100,17 +103,17 @@ export const text = [
 
 export const line = [
   {
-    name: '',
-    hex: '#dcdfe6',
-    rbg: '220-223-230',
-    cmyk: '4, 3, 0, 10',
+    name: colorStyles.line1Name,
+    hex: colorStyles.line1Hex,
+    rgb: colorStyles.line1Rgb,
+    cmyk: colorStyles.line1Cmyk,
     usage: 'For cards',
-    variable: '$lineColor1'
+    variable: colorStyles.line1Variable
   },
-  {
+  { //From old system
     name: '',
     hex: '#e4e7ed',
-    rbg: '228-231-237',
+    rgb: '228-231-237',
     cmyk: '4, 2, 0, 7',
     usage: 'For table/dividers/breadcrumb backgrounds',
     variable: '$lineColor2'
@@ -119,13 +122,11 @@ export const line = [
 
 export const background = [
   {
-    name: '',
-    hex: '#f5f7fa',
-    rbg: '245, 247, 250',
-    cmyk: '2, 1, 0, 2',
+    name: colorStyles.backgroundName,
+    hex: colorStyles.backgroundHex,
+    rgb: colorStyles.backgroundRgb,
+    cmyk: colorStyles.backgroundCmyk,
     usage: 'For page backgrounds',
-    variable: '$background'
+    variable: colorStyles.backgroundVariable
   }
 ]
-
-
