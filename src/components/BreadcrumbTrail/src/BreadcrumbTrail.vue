@@ -60,21 +60,38 @@ export default {
 @import '../../../assets/_variables.scss';
 .breadcrumb {
   align-items: flex-start;
-  background: $lineColor2;
-  color: $darkBlue;
+  // background: $lineColor2;
+  background: $grey;
+  // color: $darkBlue;
   display: flex;
-  font-size: 0.875rem;
+  // font-size: 0.875rem;
+  font-size: 12px;
   margin-top: 0;
-  padding: 0.5rem 2.5rem;
+  // padding: 0.5rem 2.5rem;
+  height: 40px;
+  line-height:40px;
+  color: $cochlear;
+  padding-left: 50px;
+  // padding-top: 14px;
+  // padding-bottom: 14px;
+  
   .breadcrumb-link {
     align-items: center;
     display: flex;
     flex-shrink: 0;
+   
   }
   a {
-    font-weight: 500;
+    font-weight: normal;
     text-decoration: none;
-    color: $darkBlue;
+    color: $cochlear;
+    line-height:40px;
+    padding-right: 16px;
+    padding-left: 16px; 
+    // color: $darkBlue;
+      &:hover{
+        font-weight: bold;
+    }
   }
   .arrow {
     margin: 0 0.5rem;
