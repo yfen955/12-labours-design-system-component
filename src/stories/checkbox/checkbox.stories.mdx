@@ -1,0 +1,103 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './checkbox.stories.js';
+
+<Meta title="Components/Checkbox Buttons" />
+
+
+<Story name="Checkbox Buttons">{stories.Single()}</Story>
+
+#### Code
+
+```js
+data() {
+  return {
+    checkboxVal: ''
+  }
+}
+```
+
+```html
+<checkbox
+  v-model="checkboxVal"
+  label="1"
+  :disabled="false"
+  display="Option 1"
+/>
+<checkbox
+  v-model="checkboxVal"
+  label="2"
+  :disabled="false"
+  display="Option 2"
+/>
+```
+
+
+
+<Story name="Checkbox Buttons From Array">{stories.Primary()}</Story>
+
+#### Code
+
+```js
+data() {
+  return {
+    data: [
+      {
+        label: 1,
+        display: "Option 1",
+        disabled: false
+      },
+      {
+        label: 2,
+        display: "Option 2",
+        disabled: false
+      },
+      {
+        label: 3,
+        display: "Option 3",
+        disabled: false
+      }
+    ],
+    checkboxVal: ''
+  }
+}
+```
+
+```html
+<checkbox
+  v-for="item in data"
+  v-bind:key="item.label"
+  v-model="checkboxVal"
+  :label="item.label"
+  :disabled="item.disabled"
+  :display="item.display"
+/>
+```
+
+### Disabled Radio Buttons
+
+<Story name="Disabled">{stories.Disabled()}</Story>
+
+#### Code
+
+```js
+data() {
+  return {
+    checkboxVal: 1
+  }
+}
+```
+
+```html
+<checkbox
+  v-model="checkboxVal"
+  label="1"
+  :disabled="true"
+  display="Checked & Disabled"
+/>
+<checkbox
+  v-model="checkboxVal"
+  label="2"
+  :disabled="true"
+  display="Unchecked & Disabled"
+/>
+```
