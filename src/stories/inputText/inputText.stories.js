@@ -228,3 +228,31 @@ export const FutureUse = () => ({
     </div>
   `
 })
+
+
+/* For Textarea */
+
+export const Multiline= () => ({
+  data() {
+    return {
+      value: '',
+      maxLength:250
+    }
+  },
+  template: `
+  <div class="input-wrap mb-32">
+    <div class="body2 label mr-32">
+      Multiline Field Title
+    </div>
+    <el-input class="multiline"
+      v-model="value" 
+      type="textarea"
+      resize="none"
+      :maxlength="maxLength"
+      :rows="5"/>
+    <div class="field-info label mr-32">
+      Max length: {{maxLength}} - Used: {{value.length}} - Remaining: {{maxLength-(value.length)}}
+    </div>
+  </div>
+  `
+})
