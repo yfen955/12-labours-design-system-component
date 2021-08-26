@@ -49,9 +49,7 @@ export const Navigation = () => createDemo(typography.navigation)
 
 export const Body = () => createDemo(typography.body)
 
-export const Labels = () => createDemo(typography.labels)
-
-export const Tabs = () => createDemo(typography.tabs)
+export const Fields = () => createDemo(typography.fields)
 
 export const LinksDefault = () => createDemo(typography.linksDefault)
 

@@ -1,0 +1,10 @@
+@import '../../assets/variables';
+
+
+:export {
+    primary:$app-primary-color;
+    secondary:$app-secondary-color;
+    text:$text-color;
+    font:$font-family;
+    line1:$lineColor1;
+}
