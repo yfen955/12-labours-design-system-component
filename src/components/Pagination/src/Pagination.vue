@@ -45,21 +45,59 @@ export default {
 </script>
 
 <style lang="scss">
-.pagination {
+@import "@/assets/_variables.scss";
+ .pagination {
   padding-top: 1em;
   text-align: center;
-
+  
+   
   button.btn-prev {
     background: none;
+    padding: 0px;
+    color: $blue;
   }
 
   button.btn-next {
     background: none;
+    padding: 0px;
+    margin-left: 16px;
+    color: $blue;
   }
 
   li.more,
   li.number {
-    background: none;
+    &.active{
+         background:$blue;
+         color:$cochlear;
+         font-weight: bold;
+ }
+  
+    &:first-child{
+      margin-left: 16px;
+    }
+    background: $cochlear;
+    border: 1px solid $blue;
+    margin-left: 10px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px; 
+    line-height: 22px; //22px aligns the text vertically to the middle.
+    min-width: 24px; 
+    font-size: 12px;
+    color: $blue;
+    font-weight: normal;
+    text-align: center;
   }
+
+  .el-pager li.active + li{
+    border-left: 1px solid !important;
+  }
+
+  .el-pager .more::before{
+    line-height: 24px !important;
+  }
+
 }
+
+
 </style>

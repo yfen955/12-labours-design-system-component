@@ -1,23 +1,35 @@
 @import '../_variables.scss';
 
 .el-button {
-  background: $app-primary-color;
-  border: 1px solid $app-primary-color;
+  background: $red;
+  // border: 1px solid $app-primary-color;
   box-sizing: border-box;
-  color: #fff;
-  font-size: 0.875rem;
-  font-family: $font-family;
-  font-weight: 500;
-  padding: 0.625rem 1.1875rem;
-  &:hover,
+  color: $cochlear;
+  font: {
+    size: 18px;
+    family: $font-family;
+    weight: 600; // 600 is the weight of Semibold.
+  }
+  // font-size: 18px;
+  // font-family: $font-family;
+  // font-family:Semibold;
+  // font-weight: 500;
+  // padding: 0.625rem 1.1875rem;
+  padding: 7px 40px 7px 40px;
+  height: 32px;
+  &:hover{
+    background:#AC0E35; // This color has not been defined in '_variable.scss', but it defined in the standard design system sheet. 
+    color: $cochlear ;
+  }
   &:focus,
   &[disabled],
   &[disabled]:hover,
   &[disabled]:focus {
-    background: $app-primary-color;
-    border: 1px solid $app-primary-color;
-    box-shadow: -3px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #fff;
+    background: $lineColor1;
+    // border: 1px solid $app-primary-color;
+    // box-shadow: -3px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    color: $cochlear;
+    opacity: 35%;
   }
   &[disabled],
   &[disabled]:hover {
@@ -29,7 +41,8 @@
   }
 
   &.large {
-    padding: 0.75rem 1.1875rem;
+    // padding: 0.75rem 1.1875rem;
+    text-align: center;
   }
 
   &.small,
@@ -43,15 +56,26 @@
     padding: 0.3125rem 0.875rem;
   }
 
-  &.secondary,
+  &.secondary{
+    background:#F8DBE2;
+    border: 2px solid $red;
+    color: $red;
+    &:hover{
+      background:#F1B7C5; // This color has not been defined in '_variable.scss', but it defined in the standard design system sheet. 
+      border: 2px solid #AC0E35;  //Same here
+      color: #AC0E35 ;   // Same here
+    }
+  }
+  
   &.secondary[disabled],
   &.secondary[disabled]:hover,
   &.secondary[disabled]:focus {
-    background: #f9f2fc;
-    border: 1px solid $app-primary-color;
-    color: $app-primary-color;
+    background: $lineColor1;
+    border: 2px solid $lineColor1;
+    color: $cochlear;
+    opacity: 35%;
     &.alt {
-      background: #fff;
+      background: $cochlear;
       border-color: $mediumGrey;
       color: $mediumGrey;
     }
@@ -63,7 +87,7 @@
   &.danger[disabled]:focus {
     background: $danger;
     border-color: $danger;
-    color: #fff;
+    color: $cochlear;
   }
 
   &.is-circle {
