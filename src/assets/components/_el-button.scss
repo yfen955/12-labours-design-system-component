@@ -5,10 +5,15 @@
   // border: 1px solid $app-primary-color;
   box-sizing: border-box;
   color: $cochlear;
-  font-size: 18px;
+  font: {
+    size: 18px;
+    family: $font-family;
+    weight: 600; // 600 is the weight of Semibold.
+  }
+  // font-size: 18px;
   // font-family: $font-family;
-  font-family:Semibold;
-  font-weight: 500;
+  // font-family:Semibold;
+  // font-weight: 500;
   // padding: 0.625rem 1.1875rem;
   padding: 7px 40px 7px 40px;
   height: 32px;
