@@ -15,7 +15,7 @@
     "storybook:deploy": "storybook-to-ghpages --ci --existing-output-dir=storybook-static",
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
     "svg": "vsvg -s ./static/icons -t ./src/assets/icons",
-    "heroku-postbuild": "yarn storybook:serve"
+    "heroku-postbuild": "yarn storybook:build"
   },
   "main": "./dist/12-labours-design-system-components.common.js",
   "files": [
