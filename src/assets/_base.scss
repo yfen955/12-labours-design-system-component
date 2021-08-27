@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+.body2{
+  font-weight: 600 !important;
+}
+
 h1 {
   font-size: 30px;
   line-height: 36px;
@@ -109,3 +113,32 @@ input {
   font-weight:400;
   color: $darkBlue;
 }*/
+
+
+.field1{
+font-size: 16px;
+line-height: 20px;
+}
+
+.field-info
+{
+  padding-top: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: italic;
+}
+
+.placeholder
+{
+  font-size: 16px;
+  line-height: 20px;
+  font-style: italic;
+  color: $lineColor1;
+}
+
+.placeholder2
+{
+  font-size: 16px;
+  line-height: 20px;
+  font-style: italic;
+}

@@ -125,3 +125,18 @@ The following combination text inputs are possible types that may be used in the
   <template slot="append">.com</template>
 </el-input>
 ```
+
+### Multiline Text
+
+<Story name='Multiline'>{stories.Multiline()}</Story>
+
+#### Code
+```html
+    <el-input class="multiline"
+      v-model="value" 
+      type="textarea"
+      resize="none"
+      :maxlength="maxLength"
+      :rows="5">
+    </el-input>
+```
