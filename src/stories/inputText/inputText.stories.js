@@ -17,21 +17,31 @@ export default {
 export const Primary = () => ({
   data() {
     return {
-      value: 'Email',
+      value: '',
+      value1: '',
+      value2:'',
       secondaryValue: 'Email',
       successValue: 'im@nicohsueh.com',
       errorValue: 'im#nicohsueh.$com',
-      disabledValue: 'Email'
+      disabledValue: ''
     }
   },
   props: defaultProps(),
   template: `
     <div class="input-demo">
       <div class="input-wrap mb-32">
+      <div class="label mr-32">
+        Example Field Title for multiple inputs
+      </div>
+      <el-input v-model="value1"  placeholder="User input"/>
+      <br />
+      <el-input v-model="value1"  placeholder="User input"/>
+    </div>
+      <div class="input-wrap mb-32">
         <div class="label mr-32">
           Normal
         </div>
-        <el-input v-model="value" />
+        <el-input v-model="value" placeholder="Enter the password"/>
       </div>
 
       <div class="input-wrap mb-32">
@@ -244,7 +254,7 @@ export const Multiline= () => ({
     <div class="body2 label mr-32">
       Multiline Field Title
     </div>
-    <el-input class="multiline"
+    <el-input class="multiline field1"
       v-model="value" 
       type="textarea"
       resize="none"
