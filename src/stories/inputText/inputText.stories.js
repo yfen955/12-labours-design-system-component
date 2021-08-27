@@ -254,7 +254,7 @@ export const Multiline= () => ({
     <div class="body2 label mr-32">
       Multiline Field Title
     </div>
-    <el-input class="multiline"
+    <el-input class="multiline field1"
       v-model="value" 
       type="textarea"
       resize="none"
