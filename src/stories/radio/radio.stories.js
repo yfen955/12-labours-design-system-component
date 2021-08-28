@@ -79,3 +79,25 @@ export const Single = () => createDemo(
   1
 )
 
+/* Radio button style group */
+
+export const RadioToggle= () => ({
+  data() {
+    return {
+      radio1: 'Option 2'
+    }
+  },
+  template: `
+  <div>
+    <div class="body2 title">
+      Toggle Title
+    </div> 
+      <el-radio-group v-model="radio1">
+        <el-radio-button label="Option 1"></el-radio-button>
+        <el-radio-button label="Option 2"></el-radio-button>
+        <el-radio-button label="Option 3"></el-radio-button>
+      </el-radio-group>
+  </div>
+  `
+})
+

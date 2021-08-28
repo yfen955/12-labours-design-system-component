@@ -120,3 +120,23 @@ data() {
   display="Unchecked & Disabled"
 />
 ```
+
+### Radio with Button style toggle
+
+<Story name="Toggle Button">{stories.RadioToggle()}</Story>
+
+```js
+ data() {
+    return {
+      radio1: 'Option 2'
+    }
+  }
+```
+
+```html
+  <el-radio-group v-model="radio1">
+    <el-radio-button label="Option 1"></el-radio-button>
+    <el-radio-button label="Option 2"></el-radio-button>
+    <el-radio-button label="Option 3"></el-radio-button>
+  </el-radio-group>
+```
