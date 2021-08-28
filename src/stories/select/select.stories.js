@@ -2,7 +2,7 @@ import './demo-styles.scss';
 
 export default {
   title: 'Components/Select',
-  includeStories: []
+  includeStories: [],
 }
 
 const defaultOpts = [{
@@ -27,7 +27,8 @@ const createSelect = (
   placeholder = 'Select',
   size = 'large',
   disabled = false,
-  secondary = false
+  //secondary = false
+  className=''
 ) => {
   return {
     data() {
@@ -37,7 +38,8 @@ const createSelect = (
         placeholder: placeholder,
         size: size,
         disabled: disabled,
-        secondary: secondary
+        //secondary: secondary
+        className:className
       }
     },
     template: `
@@ -46,7 +48,7 @@ const createSelect = (
         :placeholder=placeholder
         :size=size
         :disabled=disabled
-        :class="[secondary ? 'secondary' : '']"
+        :class="[className.length>0 ? className : '']"
       >
         <el-option
           v-for="item in options"
@@ -59,8 +61,31 @@ const createSelect = (
   }
 }
 
+
+export const Dropdown1 = () => createSelect(
+  defaultOpts,
+  'Month',
+  undefined,
+  undefined,
+  'dropdown1'
+)
+
+export const Dropdown2 = () => createSelect(
+  defaultOpts,
+  'Please select',
+  undefined,
+  undefined,
+  'dropdown2'
+)
+
+
 export const Primary = () => createSelect(
-  defaultOpts
+  defaultOpts,
+  undefined,
+  undefined,
+  undefined,
+  //false
+  undefined
 )
 
 export const Secondary = () => createSelect(
@@ -68,7 +93,8 @@ export const Secondary = () => createSelect(
   undefined,
   undefined,
   undefined,
-  true
+  //true
+  undefined
 )
 
 export const Disabled = () => createSelect(

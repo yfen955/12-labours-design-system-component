@@ -1,14 +1,16 @@
 @import '../_variables.scss';
 
 .el-select {
-  &.secondary {
-    .el-input {
-      input {
-        border-color: lightgray;
-      }
-    }
-  }
   .el-input {
+    input::placeholder {
+      color:$input-text;
+    }
+    .el-select__caret::before{
+      content: '\e605';
+      color:#808080;
+      font-size: 25px;
+    }
+
     &.is-disabled {
       input {
         border-color: $mediumGrey;
@@ -22,8 +24,33 @@
         }
       }
     }
+
+    &.secondary {
+      .el-input {
+        input {
+          border-color: lightgray;   
+        }
+      }
+    }
+
     .el-select__caret {
       color: $mediumGrey;
+    }
+  }
+
+  &.dropdown1 {
+    max-width: 150px;
+  }
+
+  &.dropdown2 {
+    .el-input {   
+      input {
+        background-color:$lineColor1;
+        opacity: 0.35;
+      }
+      .el-select__caret::before {
+        color:$lineColor1;
+      }
     }
   }
 }
