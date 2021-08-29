@@ -16,7 +16,7 @@
         }
         color: $grey;
         line-height: 24px;
-  }
+    }
 
   .label::after{
     content:"*";
@@ -25,15 +25,18 @@
 
   .el-input {
         max-width: 25rem;
-}
+  }
 
 .future-use-input-demo {
   .el-select .el-input {
     width: 110px;
-  }
+    }
   .el-input {
-    max-width: 20rem;
-    
+    max-width: 20rem;   
+    }
   }
 }
-}
+
+.multiline {
+    max-width: 30rem;
+}  

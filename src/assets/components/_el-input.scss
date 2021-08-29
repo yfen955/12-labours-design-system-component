@@ -7,12 +7,14 @@
       border-color: #dcdfe6;
     }
   }
+
   &__inner {
     font: {
       family:Arimo;
       size:16px;
       weight: normal;
     }
+    border-radius: 10px;
     line-height: 20px;
     color: $grey;
     border-color: $lineColor1;
@@ -30,7 +32,6 @@
       background: $cochlear;
       border-color: $grey !important;
       border: 1px solid;
-      border-radius: 10px;
     }
     &::placeholder {
       font: {
@@ -114,4 +115,10 @@
 }
 .el-input__icon {
   color: $lightGrey;
+}
+
+.el-textarea{
+  &__inner {
+    border-radius: 10px;
+  } 
 }

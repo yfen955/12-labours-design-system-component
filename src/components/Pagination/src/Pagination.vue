@@ -81,21 +81,22 @@ export default {
     border-radius: 50%;
     width: 24px;
     height: 24px; 
-    line-height: 24px;
+    line-height: 22px; //22px aligns the text vertically to the middle.
     min-width: 24px; 
     font-size: 12px;
     color: $blue;
     font-weight: normal;
     text-align: center;
-    
-    
   }
+
   .el-pager li.active + li{
     border-left: 1px solid !important;
   }
+
   .el-pager .more::before{
     line-height: 24px !important;
   }
+
 }
 
 
