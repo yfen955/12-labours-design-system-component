@@ -35,7 +35,7 @@ $carbon--grid-breakpoints: (
   ),
 ) !default;
 
-$carbon--grid-gutter: 1rem !default;
+$carbon--grid-gutter: .75rem !default;
 @import '@carbon/grid/scss/_inlined/_mixins';
 
 @include carbon--grid($carbon--grid-breakpoints, 1rem, 1px);

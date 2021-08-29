@@ -121,7 +121,7 @@ export const SpacingValues = () => ({
 export const Components = () => ({
   template: `
     <div class="spacing-demo-styles column">
-      <div class="component mb-32">Component</div>
+      <div class="component">Component</div>
       <div class="component">Component</div>
     </div>
   `
@@ -221,5 +221,14 @@ export const MarginProperties = () => ({
         </template>
       </el-table-column>
     </el-table>
+  `
+})
+
+export const WithHeading1 = () => ({
+  template: `
+    <div class="spacing-demo-styles column">
+      <h1>This is Heading 1</h1>
+      <span>I am heading 1 content. I am heading 1 content.</span>
+    </div>
   `
 })

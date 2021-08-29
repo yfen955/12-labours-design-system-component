@@ -1,5 +1,10 @@
 .grid-demo {
   margin-bottom: 2rem;
+  [class*='grid'] {
+    background-color:pink;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   .outside {
     min-height: 80px;
   }
