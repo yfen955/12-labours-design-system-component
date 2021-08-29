@@ -24,7 +24,7 @@
     height: 40px;
     
    
-    // padding: 0 0.938rem;
+   
     &:hover {
       border-color: $lightGrey !important;
     }
@@ -45,7 +45,6 @@
   }
   &__suffix {
     display: flex;
-    // right: 0.625rem;
   }
   &__suffix-inner {
     align-items: center;
