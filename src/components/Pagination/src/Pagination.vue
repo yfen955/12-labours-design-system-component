@@ -40,7 +40,7 @@ export default {
     selectPage: function(page) {
       this.$emit('select-page', page)
     }
-  }
+  }  
 }
 </script>
 
