@@ -1,35 +1,46 @@
 @import './_variables';
 
 body {
-  background-color: #F7FAFF;
   font-family: $font-family;
-  line-height: 1.5rem;
+  font-size:18px;
+  line-height: 24px;
+  font-weight: 'regular';
+  color:$text-color;
   margin: 0;
+}
+
+.body2{
+  font-weight: 600 !important;
 }
 
 h1 {
-  font-size: 2em;
-  font-weight: 500;
-  margin: 0;
-  line-height: 2.75rem;
-  padding: 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color:$app-primary-color;
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: 500;
-  line-height: 2.25rem;
-  margin: 0 0 1rem;
-  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color:$text-color
 }
 
-h3, h4 {
-  font-size: 1;
-  font-weight: 500;
-  line-height: 1.875rem;
-  margin: 0 0 0.5rem;
-  padding: 0;
+h3{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color:$app-primary-color;
 }
+
+h4 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color:$app-primary-color;
+}
+
 
 h5, h6 {
   font-size: 1em;
@@ -40,13 +51,16 @@ h5, h6 {
 }
 
 a {
-  color: $app-primary-color;
+  color: $app-secondary-color !important;
+  font-size: 14px;
+  text-decoration: underline !important;
+  line-height: 24px;
   &:not(.underline) {
     text-decoration: none;
   }
   &:hover,
   &:focus {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -71,11 +85,14 @@ input {
 
 .nav1 {
   font-size:16px;
-  line-height:32px;
-  font-weight:500;
-  color: $darkBlue;
+  line-height:18px;
+  font-weight:400;
+  color: $app-primary-color;
+  &:selected {
+    font-weight:700;
+  }
 }
-
+/*
 .nav2 {
   font-size:14px;
   line-height:32px;
@@ -95,4 +112,33 @@ input {
   line-height:24px;
   font-weight:400;
   color: $darkBlue;
+}*/
+
+
+.field1{
+font-size: 16px;
+line-height: 20px;
+}
+
+.field-info
+{
+  padding-top: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: italic;
+}
+
+.placeholder
+{
+  font-size: 16px;
+  line-height: 20px;
+  font-style: italic;
+  color: $lineColor1;
+}
+
+.placeholder2
+{
+  font-size: 16px;
+  line-height: 20px;
+  font-style: italic;
 }

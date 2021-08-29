@@ -1,233 +1,182 @@
+import typoStyles from './demo-styles.scss';
+
 const demoBackground = {
-  backgroundColor: '#24245B',
+  padding:'20px',
+  borderRadius:'15px',
+  backgroundColor: typoStyles.primary,
   note: 'Background added to show text. Background color may vary and is specified on a per component basis.'
+}
+
+const defaultFont ={
+  font:typoStyles.font
+}
+
+const regularWeight={
+  code:400, displayName:'Regular'
+}
+
+const semiBoldWeight={
+  code:600, displayName:'Semi Bold'
+}
+
+const boldWeight={
+  code:700,displayName:'Bold'
 }
 
 export const headings = [
   {
-    name: 'Heading 1',
-    fontSize: '32px',
+    ...defaultFont,
+    name: 'Title',
+    fontSize: '40px',
     lineHeight: '44px',
-    fontWeight: 'medium',
-    color: '#303133'
+    fontWeight: boldWeight.code,
+    weightDisplay: boldWeight.displayName,
+    color: '#FFFFFF',
+    showBackgroundColor: true,
+    ...demoBackground
   },
   {
-    name: 'Heading 2',
-    fontSize: '24px',
+    ...defaultFont,
+    name: 'Heading 1',
+    fontSize: '30px',
     lineHeight: '36px',
-    fontWeight: 'medium',
-    color: '#303133'
+    fontWeight: boldWeight.code,
+    weightDisplay: boldWeight.displayName,
+    color: typoStyles.primary
   },
   {
+    ...defaultFont,
+    name: 'Heading 2',
+    fontSize: '18px',
+    lineHeight: '24px',
+    fontWeight: boldWeight.code,
+    weightDisplay: boldWeight.displayName,
+    color: typoStyles.text
+  },
+  {
+    ...defaultFont,
     name: 'Heading 3',
-    fontSize: '16px',
-    lineHeight: '30px',
-    fontWeight: 'medium',
-    color: '#303133'
+    fontSize: '18px',
+    lineHeight: '24px',
+    fontWeight: semiBoldWeight.code,
+    weightDisplay: semiBoldWeight.displayName,
+    color: typoStyles.primary
+  },
+  {
+    ...defaultFont,
+    name: 'Heading 4',
+    fontSize: '24px',
+    lineHeight: '32px',
+    fontWeight: boldWeight.code,
+    weightDisplay: boldWeight.displayName,
+    color: typoStyles.primary
   }
 ]
 
 export const navigation = [
   {
+    ...defaultFont,
     name: 'Nav 1',
     fontSize: '16px',
-    lineHeight: '32px',
-    fontWeight: 'medium',
-    color: '#24245b'
+    lineHeight: '18px',
+    fontWeight: regularWeight.code,
+    weightDisplay: regularWeight.displayName,
+    color: typoStyles.primary
   },
   {
-    name: 'Nav 2',
-    fontSize: '14px',
-    lineHeight: '32px',
-    fontWeight: 'medium',
-    color: '#24245b'
-  },
-  {
-    name: 'Nav 3',
-    fontSize: '14px',
-    lineHeight: '16px',
-    fontWeight: 'medium',
-    color: '#24245b'
-  },
-  {
-    name: 'Nav 4',
-    fontSize: '14px',
-    lineHeight: '16px',
-    fontWeight: 'regular',
-    color: '#24245b'
-  },
-  {
-    name: 'Nav 5',
-    fontSize: '12px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#ffffff',
-    ...demoBackground
-  },
-  {
-    name: 'Nav 6',
-    fontSize: '12px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#24245b'
+    ...defaultFont,
+    name: 'Nav 1 Selected',
+    fontSize: '16px',
+    lineHeight: '18px',
+    fontWeight: boldWeight.code,
+    weightDisplay: boldWeight.displayName,
+    color: typoStyles.primary
   }
 ]
+
+const defaultBody ={
+  ...defaultFont,
+  fontSize: '18px',
+  lineHeight: '24px',
+  color: typoStyles.text
+}
 
 export const body = [
   {
     name: 'Body 1',
-    fontSize: '16px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#303133'
-  },
-  {
-    name: 'Body 1 - Highlighted',
-    usage: 'ex. for Search result keywords',
-    fontSize: '16px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#24245b',
-    backgroundColor: '#D8D8D8',
-    showBackgroundColor: true
+    fontWeight: regularWeight.code,
+    weightDisplay: regularWeight.displayName,
+    ...defaultBody
   },
   {
     name: 'Body 2',
+    fontWeight: semiBoldWeight.code,
+    weightDisplay: semiBoldWeight.displayName,
+    ...defaultBody
+  }
+]
+
+export const fields = [
+  {
+    ...defaultFont,
+    name: 'Field 1',
     fontSize: '16px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#ffffff',
-    ...demoBackground
+    lineHeight: '20px',
+    fontWeight: regularWeight.code,
+    weightDisplay: regularWeight.displayName,
+    color:  typoStyles.text
   },
   {
-    name: 'Body 4',
+    ...defaultFont,
+    name: 'Field Info',
     fontSize: '14px',
     lineHeight: '20px',
-    fontWeight: 'regular',
-    color: '#909399'
-  }
-]
-
-export const labels = [
-  {
-    name: 'Label 1',
-    usage: 'ex. For Dropdown',
-    fontSize: '14px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#303133'
+    fontStyle: 'italic',
+    color:  typoStyles.text
   },
   {
-    name: 'Label 2',
-    usage: 'For Buttons and Table Headings',
-    fontSize: '14px',
-    lineHeight: '24px',
-    fontWeight: 'medium',
-    color: '#303133'
-  },
-  {
-    name: 'Label 3',
-    usage: 'For Tags and Categories',
-    fontSize: '14px',
-    lineHeight: '24px',
-    fontWeight: 'medium',
-    color: '#24245b'
-  },
-  {
-    name: 'Label 4',
-    usage: 'For Footer titles',
+    ...defaultFont,
+    name: 'Placeholder',
     fontSize: '16px',
-    lineHeight: '24px',
-    fontWeight: 'bold',
-    color: '#303133'
-  }
-]
-
-export const tabs = [
-  {
-    name: 'Tab 1',
-    fontSize: '18px',
-    lineHeight: '24px',
-    fontWeight: 'medium',
-    color: '#8300bf'
+    lineHeight: '20px',
+    fontStyle: 'italic',
+    color: typoStyles.line1
   },
   {
-    name: 'Tab 2',
-    fontSize: '18px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#303133'
-  },
-  {
-    name: 'Tab 3',
-    fontSize: '18px',
-    lineHeight: '24px',
-    fontWeight: 'medium',
-    color: '#ffffff',
-    backgroundColor: '#24245b',
-    showBackgroundColor: true
-  },
-  {
-    name: 'Tab 4',
-    fontSize: '18px',
-    lineHeight: '24px',
-    fontWeight: 'regular',
-    color: '#ffffff',
-    backgroundColor: '#24245b',
-    showBackgroundColor: true
-  },
-  {
-    name: 'Tab 5',
+    ...defaultFont,
+    name: 'Placeholder 2',
     fontSize: '16px',
-    lineHeight: '24px',
-    fontWeight: 'medium',
-    color: '#8300bf'
+    lineHeight: '20px',
+    fontStyle: 'italic',
+    color: typoStyles.text
   }
 ]
 
 const link1 = {
+  ...defaultFont,
   name: 'Link 1',
-  fontSize: '16px',
+  fontSize: '14px',
   lineHeight: '24px',
-  fontWeight: 'medium',
-  color: '#8300bf'
+  fontWeight: regularWeight.code,
+  weightDisplay: regularWeight.displayName,
+  color: typoStyles.secondary,
+  textDecoration: 'underline'
 }
+
 const link2 = {
+  ...defaultFont,
   name: 'Link 2',
   fontSize: '16px',
-  lineHeight: '24px',
-  fontWeight: 'regular',
-  color: '#8300bf'
+  lineHeight: '18px',
+  fontWeight: semiBoldWeight.code,
+  weightDisplay: semiBoldWeight.displayName,
+  color: typoStyles.primary
 }
-const link3 = {
-  name: 'Link 3',
-  fontSize: '16px',
-  lineHeight: '24px',
-  fontWeight: 'regular',
-  color: '#303133'
-}
-const link4 = {
-  name: 'Link 4',
-  usage: 'for body text in headers with dark backgrounds',
-  fontSize: '24px',
-  lineHeight: '32px',
-  fontWeight: 'regular',
-  color: '#ffffff',
-  textDecoration: 'underline',
-  ...demoBackground
-}
+
 export const linksDefault = [
   { ...link1 },
-  {
-    ...link1,
-    name: 'Link 1 - Highlighted',
-    usage: 'ex. for  Search result keywords',
-    backgroundColor: '#D8D8D8',
-    showBackgroundColor: true
-  },
-  { ...link2 },
-  { ...link3 },
-  { ...link4 }
+  { ...link2 }
+
 ]
 
 export const linksHover = [
@@ -236,25 +185,7 @@ export const linksHover = [
     textDecoration: 'underline'
   },
   {
-    ...link1,
-    name: 'Link 1 - Highlighted',
-    usage: 'ex. for  Search result keywords',
-    backgroundColor: '#D8D8D8',
-    showBackgroundColor: true,
-    textDecoration: 'underline'
-  },
-  {
     ...link2,
-    textDecoration: 'underline'
-  },
-  {
-    ...link3,
-    textDecoration: 'underline'
-  },
-  {
-    ...link4,
-    color: '#dcdfe6',
-    usage: 'for Headers and Dark backgrounds',
     textDecoration: 'underline'
   }
 ]
