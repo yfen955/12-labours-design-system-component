@@ -62,7 +62,7 @@ export default {
   align-items: flex-start;
   background: $grey;
   display: flex;
-  font-size: 12px;  //The font-size of breadcrumb is controlled here.
+  font-size: 12px;
   margin-top: 0;
   height: 40px;
   line-height:40px;
@@ -77,6 +77,7 @@ export default {
   }
 
   a {
+    font-size:12px !important;
     font-weight: normal;
     text-decoration: none !important;
     color: $cochlear !important;
