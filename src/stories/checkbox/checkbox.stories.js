@@ -1,82 +1,27 @@
-import Checkbox from '@/components/Checkbox/src/Checkbox.vue'
+// import Checkbox from '@/components/Checkbox/src/Checkbox.vue'
 import './demo-styles.scss';
 
 export default {
     title: 'Components/Checkbox',
     includeStories: []
   }
-  
-  const createDemo = (data, val) => {
-    return {
-      components: { Checkbox },
-      data() {
-        return {
-          data: data,
-          checkboxVal: val
-        }
-      },
-      template: `
-        <div class="checkbox-group">
-          <checkbox
-            v-for="item in data"
-            v-bind:key="item.label"
-            v-model="checkboxVal"
-            :label="item.label"
-            :disabled="item.disabled || false"
-            :display="item.display"
-          />
-        </div>
-      `
-    }
-  }
-  
-  export const Primary = () => createDemo(
-    [
-      {
-        label: 1,
-        display: "Option 1"
-      },
-      {
-        label: 2,
-        display: "Option 2"
-      },
-      {
-        label: 3,
-        display: "Option 3"
+  export const Checkbox= () =>  ({
+    data () {
+      return {
+        checkList: ['selected and disabled','Option A']
       }
-    ],
-    1
-  )
-  
-  
-  export const Disabled = () => createDemo(
-    [
-      {
-        label: 1,
-        display: "Checked & Disabled",
-        disabled: true
-      },
-      {
-        label: 2,
-        display: "Unchecked & Disabled",
-        disabled: true
-      }
-    ],
-    1
-  )
-  
-  export const Single = () => createDemo(
-    [
-      {
-        label: 1,
-        display: "Option 1"
-      },
-      {
-        label: 2,
-        display: "Option 2"
-      }
-    ],
-    1
-  )
+    },
+    template: `
+    <div class="checkbox-group">
+      <el-checkbox-group v-model="checkList">
+          <el-checkbox label="Option A"></el-checkbox>
+          <el-checkbox label="Option B"></el-checkbox>
+          <el-checkbox label="Option C"></el-checkbox>
+          <el-checkbox label="disabled" disabled></el-checkbox>
+          <el-checkbox label="selected and disabled" disabled></el-checkbox>
+      </el-checkbox-group>
+    </div>
+  ` 
+  })
   
   
