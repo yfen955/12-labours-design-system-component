@@ -62,7 +62,7 @@ export default {
   align-items: flex-start;
   background: $grey;
   display: flex;
-  font-size: 12px;
+  font-size: 12px;  //The font-size of breadcrumb is controlled here.
   margin-top: 0;
   height: 40px;
   line-height:40px;
