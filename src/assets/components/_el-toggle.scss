@@ -1,0 +1,29 @@
+@import '../_variables.scss';
+
+
+.el-radio-button{
+  &:first-child .el-radio-button__inner {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  &:last-child .el-radio-button__inner {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  &__inner{           //default button 
+    width:120px;
+    max-width: 205px;
+    background-color:#FFFFFF;
+    color:$input-text;
+    border-color:$lineColor1;  
+    padding-top: 9px;
+    padding-bottom:9px;
+    @extend.field1;  
+  }
+  &__orig-radio:checked+ .el-radio-button__inner {       //checked button 
+    background-color: $app-primary-color;
+    border-color:$app-primary-color;
+    color:#FFFFFF;
+  }
+}

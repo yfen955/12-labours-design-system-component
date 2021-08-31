@@ -3,12 +3,16 @@
 .el-select {
   .el-input {
     input::placeholder {
+      padding-top: 10px;
       color:$input-text;
     }
     .el-select__caret::before{
       content: '\e605';
       color:#808080;
       font-size: 25px;
+    }
+    .el-select__caret.is-reverse {
+      padding-top: 8px;
     }
 
     &.is-disabled {
