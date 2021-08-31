@@ -1,0 +1,9 @@
+  .el-checkbox-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .el-checkbox + .el-checkbox{
+    margin-left: 12px;
+  }
