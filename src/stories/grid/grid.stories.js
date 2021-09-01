@@ -372,3 +372,100 @@ export const HideColumns = () => ({
     </div>
   `
 })
+
+
+export const Grid2 = () => ({
+  template: `
+    <div class="grid-demo">
+      <div class="bx--grid">
+        <div class="bx--row">                          
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                1
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                2
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                3
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                4
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                5
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                6
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                7
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                8
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                9
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                10
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                11
+              </div>
+            </div>
+          </div>
+          <div class="bx--col">
+            <div class="outside">
+              <div class="inside">
+                12
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  `
+})
+

@@ -7,23 +7,19 @@
       border-color: #dcdfe6;
     }
   }
-
+ 
   &__inner {
     font: {
-      family:Arimo;
+      family:$font-family;
       size:16px;
       weight: normal;
     }
     border-radius: 10px;
     line-height: 20px;
     color: $grey;
-    border-color: $lineColor1;
-    color: $grey;
-    font-size: 1rem;
-    margin-top: 8px;
+    border-color:$lineColor1;
+    margin-top: 8px;  
     height: 40px;
-    
-   
    
     &:hover {
       border-color: $lightGrey !important;
@@ -35,7 +31,7 @@
     }
     &::placeholder {
       font: {
-        family: Arimo;
+        family: $font-family;
         size: px;
         style: italic;
       }

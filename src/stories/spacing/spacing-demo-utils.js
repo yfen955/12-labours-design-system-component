@@ -1,17 +1,21 @@
-export const spaces = [
-  0,
-  2,
+/*New spacing, only multiples of 4 */
+export const spaces = [     
   4,
   8,
   12,
   16,
+  20,
   24,
+  28,
   32,
+  36,
   40,
+  44,
   48,
   56,
   64
 ]
+
 
 export const areas = [
   {

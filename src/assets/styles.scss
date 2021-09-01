@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Arimo;400,400i,600,700';
+@import 'https://fonts.googleapis.com/css?family=Arimo:400,400i,600,700';
 
 @import '_variables';
 
@@ -10,6 +10,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import './components/_el-input';
 @import './components/_el-select';
+@import './components/_el-toggle';
 // @import './components/_el-dialog';
 // // @import './components/_el-message';
 @import './components/_el-checkbox';
