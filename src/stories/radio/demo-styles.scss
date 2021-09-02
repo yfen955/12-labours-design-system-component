@@ -1,9 +1,17 @@
-
 .radio-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+.el-radio + .el-radio {
+  margin-left: 12px;
+}
+// .radio-disabled{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
 
 .title{
   margin-bottom:8px;

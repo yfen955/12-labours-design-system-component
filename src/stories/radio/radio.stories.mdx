@@ -22,104 +22,30 @@ The radio button component accepts the following properties:
 
 ### Radio Buttons
 
-<Story name="Radio Buttons">{stories.Single()}</Story>
+<Story name="Radio Buttons">{stories.radio()}</Story>
 
 #### Code
 
 ```js
-data() {
-  return {
-    radioVal: ''
-  }
-}
-```
-
-```html
-<sparc-radio
-  v-model="radioVal"
-  label="1"
-  :disabled="false"
-  display="Option 1"
-/>
-<sparc-radio
-  v-model="radioVal"
-  label="2"
-  :disabled="false"
-  display="Option 2"
-/>
-```
-
-### Radio Buttons From Array
-Using an array of objects to store the information for each radio button, multiple radio buttons can be created using the `v-for` directive.
-
-<Story name="Radio Buttons From Array">{stories.Primary()}</Story>
-
-#### Code
-
-```js
-data() {
-  return {
-    data: [
-      {
-        label: 1,
-        display: "Option 1",
-        disabled: false
-      },
-      {
-        label: 2,
-        display: "Option 2",
-        disabled: false
-      },
-      {
-        label: 3,
-        display: "Option 3",
-        disabled: false
+ data() {
+      return {
+        radio: 3,
+        radio_d:'selected and disabled'
       }
-    ],
-    radioVal: ''
-  }
-}
+    }
 ```
 
 ```html
-<sparc-radio
-  v-for="item in data"
-  v-bind:key="item.label"
-  v-model="radioVal"
-  :label="item.label"
-  :disabled="item.disabled"
-  :display="item.display"
-/>
+   <el-radio-group v-model="radio">
+      <el-radio :label="3">Option A</el-radio>
+      <el-radio :label="6">Option B</el-radio>
+      <el-radio :label="9">Option C</el-radio>
+    </el-radio-group>
+    <el-radio disabled v-model="radio_d" label="disabled"></el-radio>
+    <el-radio disabled v-model="radio_d" label="selected and disabled"></el-radio>
 ```
 
-### Disabled Radio Buttons
 
-<Story name="Disabled">{stories.Disabled()}</Story>
-
-#### Code
-
-```js
-data() {
-  return {
-    radioVal: 1
-  }
-}
-```
-
-```html
-<sparc-radio
-  v-model="radioVal"
-  label="1"
-  :disabled="true"
-  display="Checked & Disabled"
-/>
-<sparc-radio
-  v-model="radioVal"
-  label="2"
-  :disabled="true"
-  display="Unchecked & Disabled"
-/>
-```
 
 ### Radio with Button style toggle
 

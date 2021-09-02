@@ -42,7 +42,7 @@
         :page-size="pageSize"
         @update-page-size="updatePageSize"
       />
-      <div class="radio-group">
+      <!-- <div class="radio-group">
         <sparc-radio
           v-for="item in radioData"
           v-bind:key="item.label"
@@ -51,7 +51,7 @@
           :disabled="item.disabled || false"
           :display="item.display"
         />
-      </div>
+      </div> -->
       <div class="tooltip">
         <sparc-tooltip v-for="dir in tooltipDirs" :key="dir" :placement="dir">
           <div slot="data">{{ dir }}<br/>THIS IS <a href="#">ALOT</a> OF TEXT</div>
@@ -118,30 +118,30 @@ export default {
       ],
       pageSize: 10,
       pageCount: 100,
-      radioData: [
-        {
-          label: 1,
-          display: "one"
-        },
-        {
-          label: 2,
-          display: "two",
-          disabled: true
-        },
-        {
-          label: 3,
-          display: "three"
-        },
-        {
-          label: 4,
-          display: "four"
-        },
-        {
-          label: 5,
-          display: "five"
-        }
-      ],
-      radioVal: '',
+      // radioData: [
+      //   {
+      //     label: 1,
+      //     display: "one"
+      //   },
+      //   {
+      //     label: 2,
+      //     display: "two",
+      //     disabled: true
+      //   },
+      //   {
+      //     label: 3,
+      //     display: "three"
+      //   },
+      //   {
+      //     label: 4,
+      //     display: "four"
+      //   },
+      //   {
+      //     label: 5,
+      //     display: "five"
+      //   }
+      // ],
+      // radioVal: '',
       tooltipDirs: [
         'top-left',
         'top-center',

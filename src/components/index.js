@@ -12,7 +12,6 @@ import SparcHeader from './SparcHeader'
 import TabNav from './TabNav'
 import Pagination from './Pagination'
 import PaginationMenu from './PaginationMenu'
-import SparcRadio from './SparcRadio'
 import SparcTooltip from './SparcTooltip'
 
 import '@/assets/icons'
@@ -24,7 +23,6 @@ const Components = {
   TabNav,
   Pagination,
   PaginationMenu,
-  SparcRadio,
   SparcTooltip
 }
 
