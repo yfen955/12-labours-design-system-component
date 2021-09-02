@@ -16,13 +16,16 @@ export const radio = () => ({
       <div class="radio-group">
         <el-radio-group v-model="radio">
           <el-radio :label="3">Option A</el-radio>
+          <br />
           <el-radio :label="6">Option B</el-radio>
+          <br />
           <el-radio :label="9">Option C</el-radio>
-      </el-radio-group>
+        </el-radio-group>
+     
       <div class="radio-disabled">
-      <el-radio disabled v-model="radio_d" label="disabled"></el-radio>
-      <el-radio disabled v-model="radio_d" label="selected and disabled"></el-radio>
-    </div>
+        <el-radio disabled v-model="radio_d" label="disabled"></el-radio>
+        <el-radio disabled v-model="radio_d" label="selected and disabled"></el-radio>
+      </div>
   `
   })
 
