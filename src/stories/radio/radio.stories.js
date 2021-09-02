@@ -21,8 +21,6 @@ export const radio = () => ({
           <br />
           <el-radio :label="9">Option C</el-radio>
         </el-radio-group>
-     
-      <div class="radio-disabled">
         <el-radio disabled v-model="radio_d" label="disabled"></el-radio>
         <el-radio disabled v-model="radio_d" label="selected and disabled"></el-radio>
       </div>
