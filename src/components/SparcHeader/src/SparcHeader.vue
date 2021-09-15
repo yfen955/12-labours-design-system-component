@@ -1,18 +1,6 @@
 <template>
   <div class="header">
     <div class="header__nav">
-      <div class="header__nav--parent">
-        <template v-for="item in parentLinks">
-          <svgicon :name="item.icon" width="18" height="18" :key="item.icon" />
-          <!-- Expect this to be either nuxt-link or router-link -->
-          <component
-            :is="linkComponent"
-            :to="item.href"
-            :key="item.displayTitle"
-            class="nav5"
-          >{{ item.displayTitle }}</component>
-        </template>
-      </div>
       <div class="header__nav--main">
         <div class="nav-main-container">
           <button class="nav-main-container__mobile-menu" @click="openMobileNav">
@@ -162,27 +150,7 @@ export default {
         ]
       }
     },
-    parentLinks: {
-      type: Array,
-      default: function() { return [
-          {
-            displayTitle: "About SPARC",
-            icon: "about",
-            href: "about"
-          },
-          {
-            displayTitle: "Contact Us",
-            icon: "contact",
-            href: "/contact-us"
-          },
-          {
-            displayTitle: "Need Help?",
-            icon: "help",
-            href: "help"
-          }
-        ] 
-      }
-    },
+  
     currentPath: {
       type: String,
       default: "/"
@@ -393,31 +361,6 @@ export default {
 .header__nav {
   background-color: $darkBlue;
   width: 100%;
-}
-
-.header__nav--parent {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  .svg-icon {
-    color: $cochlear;
-    padding-right: 0.5rem;
-    padding-top: 0.2rem;
-  }
-  img {
-    margin-right: 5px;
-  }
-  a {
-    padding-right: 32px;
-    text-decoration: none;
-  }
-  @media (min-width: 320px) and (max-width: 1023px) {
-    & {
-      display: none;
-    }
-  }
 }
 
 .header__nav--main {
