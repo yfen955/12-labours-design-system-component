@@ -13,7 +13,7 @@
             >
               <!-- Provide a way to slot in the logo -->
               <slot name="logo">
-                <sparc-logo />
+                <sparc-logo/>
               </slot>
             </component>
           </div>
@@ -43,20 +43,9 @@
                     :to="link.href"
                     :class="{ active: activeLink(link.href) }"
                     exact-active-class="active"
-                  >{{ link.displayTitle }}</component>
+                  >{{ link.displayTitle.toUpperCase() }}</component>
                 </li>
                 <hr class="divider" />
-              </ul>
-              <ul class="mobile-navigation__links">
-                <template v-for="item in parentLinks">
-                  <li :key="item.displayTitle" class="nav6">
-                    <svgicon :name="item.icon" width="18" height="18"/>
-                    <component
-                      :is="linkComponent"
-                      :to="item.href"
-                    >{{ item.displayTitle }}</component>
-                  </li>
-                </template>
               </ul>
               <div class="mobile-navigation__links--social">
                 <a :href="twitterLink" target="_blank">
@@ -68,11 +57,12 @@
               </div>
             </div>
           </div>
-          <div class="nav-main-container__search">
+          <div class="nav-main-container__login">
+          <!--      //Search from old code
             <el-input
               v-model="searchQuery"
               type="text"
-              class="nav-main-container__search-input"
+              class="nav-main-container__login-input"
               placeholder="Search"
               @keyup.native.enter="executeSearch"
             >
@@ -85,7 +75,7 @@
                 />
               </el-select>
             </el-input>
-            <button class="nav-main-container__search-button" @click="executeSearch">
+            <button class="nav-main-container__login-button" @click="executeSearch">
               <svgicon
                 color="white"
                 icon="magnifyingGlass"
@@ -94,6 +84,10 @@
                 dir="left"
               />
             </button>
+          -->
+          <el-button  class="nav-main-container__login-button">
+            LOGIN
+          </el-button >
           </div>
         </div>
       </div>
@@ -123,29 +117,29 @@ export default {
       type: Array,
       default: function() { return [
           {
-            title: "index",
-            displayTitle: "Home",
-            href: "/"
-          },
-          {
-            title: "data",
-            displayTitle: "Find Data",
+            title: "data-and-models",
+            displayTitle: "Data & Models",
             href: "/data?type=dataset"
           },
           {
             title: "resources",
-            displayTitle: "Tools & Resources",
-            href: `/resources?type=${process.env.ctf_resource_id}`
+            displayTitle: "Resources",
+            href: "/resources"
           },
           {
-            title: "maps",
-            displayTitle: "Maps",
-            href: "/maps"
+            title: "about",
+            displayTitle: "About",
+            href: `/about`
           },
           {
             title: "news-and-events",
             displayTitle: "News & Events",
-            href: "/news-and-events"
+            href: "/news-and-event"
+          },
+          {
+            title: "search",
+            displayTitle: "Search",
+            href: "/search"
           }
         ]
       }
@@ -276,6 +270,7 @@ export default {
      * Executes a search query based on selected
      * option and query
      */
+
     executeSearch: function() {
       const option = this.searchSelectOptions.find(
         o => o.value === this.searchSelect
@@ -312,14 +307,6 @@ export default {
   padding-top: 1rem;
 }
 
-.header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  @media (min-width: 320px) and (max-width: 1023px) {
-    align-items: center;
-  }
-}
 @media (min-width: 320px) and (max-width: 1023px) {
   .overlay {
     position: absolute;
@@ -358,19 +345,31 @@ export default {
   }
 }
 
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  @media (min-width:1440px){    //Fixed width for bigger screens
+     width: 1440px;
+     margin:0 auto;             //Align to center of the screen
+  }
+  @media (min-width: 320px) and (max-width: 1023px) {
+    align-items: center;
+    just-content:space-between;
+  }
+}
+
 .header__nav {
-  background-color: $darkBlue;
+  background-color: $cochlear;
   width: 100%;
 }
 
 .header__nav--main {
-  height: 82px;
-  background-color: $cochlear;
-  padding-top: 2rem;
-  padding-left: 33px;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%);
+  height: 100px;  
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%); 
   @media (min-width: 320px) and (max-width: 1023px) {
     height: 41px;
     padding-left: 0;
@@ -407,6 +406,7 @@ export default {
     }
   }
 
+  /*  //old - dont know if needed
   a {
     color: $app-secondary-color;
     font-size: 16px;
@@ -414,6 +414,25 @@ export default {
     font-weight: 500;
     padding-top: 5px;
     text-decoration: none;
+  }*/
+}  //header__nav--main ends here
+
+
+.nav-main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-left:60px; 
+  align-items: center;    
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding-left:2px;    //new
+    width: 100%;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%);
   }
 }
 
@@ -434,46 +453,33 @@ export default {
   }
 }
 
-.nav-main-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  @media (min-width: 320px) and (max-width: 1023px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
-    width: 100%;
-    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%);
-  }
-}
-
 .logo
 {
-  height: 62px;
-  width: 127px;
+  height: 100px;   
+  width: 117px;  
   white-space: nowrap;
-  margin-right: 16px;
+
   @media (min-width: 320px) and (max-width: 1023px) {
     height: 2rem;
-    width: 100%;
+    width:  60px;
     margin-right: 0;
-    padding-top: 0.1rem;
+    padding:4px;
   }
 }
 
-.nav-main-container__search {
+.nav-main-container__login{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 54%;
-  margin-right: 1rem;
+  margin-left: auto;     //To align only this item of flexbox to right
+  width: 40%;     //old - was 54%
+  margin-right: 2rem;  
   @media (min-width: 320px) and (max-width: 1023px) {
     width: 0;
   }
 }
 
-.nav-main-container__search-input {
+.nav-main-container__login-input {
   width: 30vw;
   height: 34px;
 
@@ -491,13 +497,10 @@ export default {
   }
 }
 
-.nav-main-container__search-button {
-  background-color: $app-primary-color;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  margin-left: 9px;
-  margin-top: 1px;
+.nav-main-container__login-button {
+  width: 128px;
+  height: 32px;
+
   border: none;
   cursor: pointer;
   @media screen and (max-width: 1023px) {
@@ -549,13 +552,11 @@ export default {
 }
 
 .mobile-navigation {
-  padding: 0px;
-  height: 100%;
-  margin-left: 1rem;
-  width: 120%;
+  height: 100%;  
+  margin-left: 50px; 
+  width: 120%; 
   ul {
     padding-left: 0;
-    margin-top: 0.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -567,15 +568,14 @@ export default {
       }
 
       a {
-        text-decoration: none;
-        color: $darkBlue;
-        padding-bottom: 0.2rem;
-        font-weight: 500;
+        text-decoration: none  !important;
+        color:$app-primary-color !important;
+        letter-spacing: 0px;  //new
+        font: normal normal normal 16px/18px $font-family;   
 
         &.active,
         &:hover,
         &:focus {
-          border-bottom: 2px solid $app-primary-color;
           color: $app-primary-color;
         }
       }
@@ -594,13 +594,14 @@ export default {
     & {
       background: $background;
       bottom: 0;
-      display: none;
+      display: none;   
+      margin-left:0px;    
       flex-direction: column;
       left: 0;
       padding: 1em;
       position: fixed;
       right: 6rem;
-      top: 3.4rem;
+      top: 3.2rem;
       z-index: 9999;
       &.open {
         display: flex;
@@ -620,10 +621,14 @@ export default {
       }
     }
   }
-}
+}   //.mobile-navigation ends here
 
 .search-mobile {
   display: none;
+}
+
+.svg-fill {
+  color:$app-secondary-color;
 }
 
 @media (min-width: 320px) and (max-width: 1023px) {
