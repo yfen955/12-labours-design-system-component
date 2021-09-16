@@ -7,7 +7,7 @@ const defaultProps = () => ({
 })
 
 export default {
-  title: 'Large Components/Sparc Header',
+  title: 'Large Components/12 Labours Header',
   decorators: [withKnobs, StoryRouter()],
   includeStories: []
 }
