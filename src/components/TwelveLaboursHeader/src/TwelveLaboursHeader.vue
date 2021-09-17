@@ -350,10 +350,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  @media (min-width:1440px){    //Fixed width for bigger screens
-     width: 1440px;
-     margin:0 auto;             //Align to center of the screen
-  }
+
   @media (min-width: 320px) and (max-width: 1023px) {
     align-items: center;
     just-content:space-between;
@@ -406,7 +403,7 @@ export default {
     }
   }
 
-  /*  //old - dont know if needed
+  /*  //old - not needed right now, will check later if needed for smaller screens
   a {
     color: $app-secondary-color;
     font-size: 16px;
@@ -415,7 +412,7 @@ export default {
     padding-top: 5px;
     text-decoration: none;
   }*/
-}  //header__nav--main ends here
+} 
 
 
 .nav-main-container {
@@ -621,7 +618,7 @@ export default {
       }
     }
   }
-}   //.mobile-navigation ends here
+}  
 
 .search-mobile {
   display: none;
