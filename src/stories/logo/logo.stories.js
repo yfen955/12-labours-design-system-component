@@ -1,4 +1,6 @@
-import SparcLogo from '@/components/SparcLogo/SparcLogo.vue'
+//import SparcLogo from '@/components/TwelveLaboursLogo/TwelveLaboursLogo.vue'
+import TwelveLaboursLogo from '@/components/TwelveLaboursLogo/TwelveLaboursLogo.vue'
+
 
 import './demo-styles.scss';
 
@@ -8,14 +10,14 @@ export default {
 }
 
 export const Logo = () => ({
-  components: { SparcLogo },
+  components: { TwelveLaboursLogo },
   template: `
     <div class="logo-demo-styles">
       <div class="bx--grid">
         <div class="bx--row mb-32">
           <div class="bx--col">
             <div class="logo-primary">
-              <sparc-logo type="primary" />
+              <twelve-labours-logo type="primary" />
             </div>
           </div>
         </div>
@@ -23,12 +25,12 @@ export const Logo = () => ({
         <div class="bx--row mb-32">
           <div class="bx--col">
             <div class="logo-white">
-              <sparc-logo type="white" />
+              <twelve-labours-logo type="white" />
             </div>
           </div>
           <div class="bx--col">
             <div class="logo-black">
-              <sparc-logo type="black" />
+              <twelve-labours-logo type="black" />
             </div>
           </div>
         </div>
@@ -37,13 +39,13 @@ export const Logo = () => ({
           <div class="bx--col">
             <div class="logo-usage-wrap">
               <div class="logo-1 demo-logo-usage cross">
-                <sparc-logo class="logo" type="primary" />
+                <twelve-labours-logo class="logo" type="primary" />
               </div>
               <div class="logo-2 demo-logo-usage cross">
-                <sparc-logo class="logo" type="primary" />
+                <twelve-labours-logo class="logo" type="primary" />
               </div>
               <div class="logo-3 demo-logo-usage">
-                <sparc-logo class="logo" type="primary" />
+                <twelve-labours-logo class="logo" type="primary" />
               </div>
             </div>
           </div>
@@ -55,14 +57,14 @@ export const Logo = () => ({
   `
 })
 export const Secondary = () => ({
-  components: { SparcLogo },
+  components: { TwelveLaboursLogo },
   template: `
     <div class="logo-demo-styles">
       <div class="bx--grid">
         <div class="bx--row mb-32">
           <div class="bx--col">
             <div class="logo-primary">
-              <sparc-logo type="primary" :secondary="true" />
+              <twelve-labours-logo type="primary" :secondary="true" />
             </div>
           </div>
         </div>
@@ -70,12 +72,12 @@ export const Secondary = () => ({
         <div class="bx--row mb-32">
           <div class="bx--col">
             <div class="logo-white">
-              <sparc-logo type="white" :secondary="true" />
+              <twelve-labours-logo type="white" :secondary="true" />
             </div>
           </div>
           <div class="bx--col">
             <div class="logo-black">
-              <sparc-logo type="black" :secondary="true" />
+              <twelve-labours-logo type="black" :secondary="true" />
             </div>
           </div>
         </div>
@@ -84,13 +86,13 @@ export const Secondary = () => ({
           <div class="bx--col">
             <div class="logo-usage-wrap">
               <div class="logo-1 demo-logo-usage cross">
-                <sparc-logo class="logo" type="primary" :secondary="true" />
+                <twelve-labours-logo class="logo" type="primary" :secondary="true" />
               </div>
               <div class="logo-2 demo-logo-usage cross">
-                <sparc-logo class="logo" type="primary" :secondary="true" />
+                <twelve-labours-logo class="logo" type="primary" :secondary="true" />
               </div>
               <div class="logo-3 demo-logo-usage">
-                <sparc-logo class="logo" type="primary" :secondary="true" />
+                <twelve-labours-logo class="logo" type="primary" :secondary="true" />
               </div>
             </div>
           </div>
