@@ -13,7 +13,7 @@
             >
               <!-- Provide a way to slot in the logo -->
               <slot name="logo">
-                <sparc-logo/>
+                <twelve-labours-logo/>
               </slot>
             </component>
           </div>
@@ -96,7 +96,7 @@
 </template>
 
 <script>
-import SparcLogo from "../../SparcLogo/SparcLogo.vue";
+import TwelveLaboursLogo from "../../TwelveLaboursLogo/TwelveLaboursLogo.vue";
 
 export default {
   name: "SparcHeader",
@@ -151,7 +151,7 @@ export default {
     }
   },
   components: {
-    SparcLogo
+    TwelveLaboursLogo
   },
   data: () => ({
     menuOpen: false,
@@ -461,7 +461,7 @@ export default {
 
   @media (min-width: 320px) and (max-width: 1023px) {
     height: 2rem;
-    width:  60px;
+    width:  100%;
     margin-right: 0;
     padding:4px;
   }
