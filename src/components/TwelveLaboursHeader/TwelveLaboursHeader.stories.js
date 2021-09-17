@@ -16,7 +16,7 @@ export const Primary = () => ({
   props: defaultProps(),
   template: `
     <div>
-      <SparcHeader 
+      <TwelveLaboursHeader 
         linkComponent="router-link" 
         :currentPath="$route.name"/>
     </div>

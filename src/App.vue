@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <SparcHeader linkComponent="router-link" :currentPath="$route.name"/>
+    <TwelveLaboursHeader linkComponent="router-link" :currentPath="$route.name"/>
     <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" />
     <div class="content-body">
       <el-button>hi</el-button>

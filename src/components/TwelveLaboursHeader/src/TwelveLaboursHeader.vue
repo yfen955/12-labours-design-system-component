@@ -99,7 +99,7 @@
 import TwelveLaboursLogo from "../../TwelveLaboursLogo/TwelveLaboursLogo.vue";
 
 export default {
-  name: "SparcHeader",
+  name: "TwelveLaboursHeader",
   props: {
     linkComponent: {
       type: String,
@@ -461,7 +461,7 @@ export default {
 
   @media (min-width: 320px) and (max-width: 1023px) {
     height: 2rem;
-    width:  100%;
+    width:  60px;
     margin-right: 0;
     padding:4px;
   }
