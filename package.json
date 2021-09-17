@@ -1,13 +1,13 @@
 {
   "name": "@abi-software/twelve-labours-design-system-components",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha-2",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name sparc-design-system-components ./src/components/index.js",
+    "build-bundle": "vue-cli-service build --target lib --name twelve-labours-design-system-components ./src/components/index.js",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md'",
@@ -17,7 +17,7 @@
     "svg": "vsvg -s ./static/icons -t ./src/assets/icons",
     "heroku-postbuild": "yarn storybook:build"
   },
-  "main": "./dist/12-labours-design-system-components.common.js",
+  "main": "./dist/twelve-labours-design-system-components.common.js",
   "files": [
     "dist/*",
     "src/*",
