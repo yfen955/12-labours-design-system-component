@@ -419,7 +419,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-left:60px; 
+  padding:0px 60px;
   align-items: center;    
 
   @media (min-width: 320px) and (max-width: 1023px) {
@@ -470,7 +470,6 @@ export default {
   justify-content: flex-end;
   margin-left: auto;     //To align only this item of flexbox to right
   width: 40%;     //old - was 54%
-  margin-right: 2rem;  
   @media (min-width: 320px) and (max-width: 1023px) {
     width: 0;
   }
