@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <TwelveLaboursHeader linkComponent="router-link" :currentPath="$route.name"/>
     <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" />
     <div class="content-body">
@@ -79,6 +78,7 @@
         </el-select>
       </el-row>
     </div>
+    <TwelveLaboursFooter/>
   </div>
 </template>
 
