@@ -9,6 +9,7 @@ import '@/assets/styles.scss';
 import BreadcrumbTrail from './BreadcrumbTrail'
 import ContentOverviewCard from './ContentOverviewCard'
 import TwelveLaboursHeader from './TwelveLaboursHeader'
+import TwelveLaboursFooter from './TwelveLaboursFooter'
 import TabNav from './TabNav'
 import Pagination from './Pagination'
 import PaginationMenu from './PaginationMenu'
@@ -20,6 +21,7 @@ const Components = {
   BreadcrumbTrail,
   ContentOverviewCard,
   TwelveLaboursHeader,
+  TwelveLaboursFooter,
   TabNav,
   Pagination,
   PaginationMenu,
