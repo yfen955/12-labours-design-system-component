@@ -134,7 +134,7 @@ export default {
           {
             title: "news-and-events",
             displayTitle: "News & Events",
-            href: "/news-and-event"
+            href: "/news-and-events"
           },
           {
             title: "search",
