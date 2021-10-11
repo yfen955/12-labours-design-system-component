@@ -20,19 +20,12 @@
         </el-option>
       </el-select>
 
-      <div style="background: #292b66; padding: 2em;">
+      <div style="padding: 2em;">
         <tab-nav
-          class="style2"
           :tabs="tabs"
           :active-tab="activeTab"
-          @set-active-tab="activeTab = $event"
         />
       </div>
-      <tab-nav
-        :tabs="tabs"
-        :active-tab="activeTab"
-        @set-active-tab="activeTab = $event"
-      />
       <pagination
         :total-count="pageCount"
         :selected="3"
@@ -106,15 +99,15 @@ export default {
         label: 'Option5'
       }],
       value: '',
-      activeTab: 'upcoming',
+      activeTab: 'past',
       tabs: [
         {
           label: 'Upcoming',
-          type: 'upcoming'
+          name: 'upcoming'
         },
         {
           label: 'Past',
-          type: 'past'
+          name: 'past'
         }
       ],
       pageSize: 10,
