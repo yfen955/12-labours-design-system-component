@@ -57,6 +57,8 @@
         line1Rgb:get-rgb($lineColor1);
         line1Cmyk: 41,0,34,38;
 
+        
+
         //Background
         backgroundName: unquote('Light Grey');
         backgroundVariable:unquote("$background");

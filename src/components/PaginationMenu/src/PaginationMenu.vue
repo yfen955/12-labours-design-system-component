@@ -87,7 +87,7 @@ export default {
   background-color: transparent;
   font-size: 14px;
   font-weight: bold;
-  color: $purple;
+  color:$blue;
   margin-left: 5px;
 }
 

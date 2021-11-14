@@ -90,14 +90,6 @@ export const text = [
     cmyk: '2, 2, 0, 60',
     usage: 'For footer text',
     variable: '$mediumGrey'
-  },
-  { //From old system
-    name: '',
-    hex: '#909399',
-    rgb: '144-147-153',
-    cmyk: '4, 2, 0, 60',
-    usage: 'For labels and ghost text',
-    variable: '$lightGrey'
   }
 ]
 
