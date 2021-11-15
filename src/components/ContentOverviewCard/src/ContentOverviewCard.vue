@@ -122,11 +122,10 @@ export default {
         background: $app-primary-color;
         height: 2.5rem;
         width: 12rem;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         a {
           color: white;
-          font-size: 14px;
-          font-weight: 0.875rem;
+          font-size: 0.875rem;
           text-transform: uppercase;
           text-decoration: none;
           margin-left: 0;
