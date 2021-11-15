@@ -2,24 +2,18 @@
 
 
 .el-input {
-  &.secondary {
-    .el-input__inner {
-      border-color: #dcdfe6;
-    }
-  }
- 
+
   &__inner {
     font: {
       family:$font-family;
-      size:16px;
+      size:1rem;
       weight: normal;
     }
-    border-radius: 10px;
-    line-height: 20px;
+    border-radius: 0.625rem;
     color: $grey;
     border-color:$lineColor1;
-    margin-top: 8px;  
-    height: 40px;
+    margin-top: 0.5rem;  
+    height: 2.5rem;
    
     &:hover {
       border-color: $lightGrey !important;
@@ -27,18 +21,18 @@
     &:focus {
       background: $cochlear;
       border-color: $grey !important;
-      border: 1px solid;
     }
     &::placeholder {
-      font: {
-        family: $font-family;
-        size: px;
-        style: italic;
-      }
-      line-height: 20px;
-      color: $lineColor1;
+      @extend .placeholder;
     }
   }
+
+  &.secondary {
+    .el-input__inner {
+      border-color:  $lineColor2;
+    }
+  }
+ 
   &__suffix {
     display: flex;
   }
@@ -48,17 +42,17 @@
   }
   &.is-disabled {
     .el-input__inner {
-      border-color: #dcdfe6;
+      border-color: $lineColor2;
       color: $mediumGrey;
       &:hover {
-        border-color: #dcdfe6 !important;
+        border-color: $lineColor2 !important;
       }
     }
   }
 }
 
 .el-input--small .el-input__inner {
-  border-radius: 3px;
+  border-radius:  0.625rem;   
   font-size: 0.875rem;
   padding: 0 0.75rem;
 }
@@ -90,7 +84,7 @@
 
 .el-input-number__increase,
 .el-input-number__decrease {
-  margin-top: 8px;
+  margin-top: .5rem;
 }
 
 .el-input-number.is-controls-right .el-input-number__increase,
@@ -115,6 +109,15 @@
 
 .el-textarea{
   &__inner {
-    border-radius: 10px;
+    border-radius: 0.625rem;
   } 
+}
+
+//For Steppers
+
+.el-input-number__decrease{
+  border-radius: 0.625rem 0 0 0.625rem;
+}
+.el-input-number__increase{
+  border-radius: 0 0.625rem 0.625rem 0;
 }
