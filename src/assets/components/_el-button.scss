@@ -2,24 +2,19 @@
 
 .el-button {
   background: $red;
-  // border: 1px solid $app-primary-color;
   box-sizing: border-box;
-  border-radius: 16px;
+  border-radius: 1rem;
   color: $cochlear;
+  text-transform: uppercase;
   font: {
-    size: 18px;
+    size: 1.13rem;
     family: $font-family;
-    weight: 600; // 600 is the weight of Semibold.
+    weight: 600; 
   }
-  // font-size: 18px;
-  // font-family: $font-family;
-  // font-family:Semibold;
-  // font-weight: 500;
-  // padding: 0.625rem 1.1875rem;
-  padding: 7px 40px 7px 40px;
-  height: 32px;
+  padding:0.25rem 2.5rem;
+  height: 2rem;
   &:hover{
-    background:#AC0E35; // This color has not been defined in '_variable.scss', but it defined in the standard design system sheet. 
+    background:$darkRed; 
     color: $cochlear ;
   }
   &:focus,
@@ -27,34 +22,23 @@
   &[disabled]:hover,
   &[disabled]:focus {
     background: $lineColor1;
-    // border: 1px solid $app-primary-color;
-    // box-shadow: -3px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    color: $cochlear;
-    opacity: 35%;
-  }
-  &[disabled],
-  &[disabled]:hover {
-    box-shadow: none;
-    opacity: 0.6;
-  }
-  &.uppercase {
-    text-transform: uppercase;
+    color:  $mediumGrey;
+    opacity: 0.35;
   }
 
   &.large {
-    // padding: 0.75rem 1.1875rem;
     text-align: center;
   }
 
   &.small,
   &.extra-small {
-    border-radius: 3px;
+    border-radius: 1rem;
     font-size: 0.75rem;
-    padding: 0.5625rem 0.875rem;
+    padding: 0.56rem 0.88rem;
   }
 
   &.extra-small {
-    padding: 0.3125rem 0.875rem;
+    padding: 0.31rem 0.88rem;
   }
 
   &.secondary{
@@ -62,9 +46,9 @@
     border: 2px solid $red;
     color: $red;
     &:hover{
-      background:#F1B7C5; // This color has not been defined in '_variable.scss', but it defined in the standard design system sheet. 
-      border: 2px solid #AC0E35;  //Same here
-      color: #AC0E35 ;   // Same here
+      background:#F1B7C5; 
+      border: 2px solid $darkRed;  
+      color: $darkRed ;  
     }
   }
   
@@ -73,8 +57,8 @@
   &.secondary[disabled]:focus {
     background: $lineColor1;
     border: 2px solid $lineColor1;
-    color: $cochlear;
-    opacity: 35%;
+    color:  $mediumGrey;
+    opacity:.35;
     &.alt {
       background: $cochlear;
       border-color: $mediumGrey;
