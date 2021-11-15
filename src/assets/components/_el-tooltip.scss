@@ -4,13 +4,13 @@
   &__popper {
     background: $tooltipColor !important;
     border: 1px solid $blue;
-    border-radius: 4px;
-    color: #303133 !important;
-    font-size: 12px;
-    line-height: 18px;
+    border-radius: 0.25rem;
+    color:$darkBlue !important;
+    font-size: 0.75rem;
+    line-height: 1.13rem;
     a:not(.underline){
       text-decoration: underline;
-      color: #303133;
+      color:$darkBlue;   
     }
   }
 }
