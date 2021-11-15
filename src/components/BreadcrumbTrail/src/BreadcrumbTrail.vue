@@ -3,19 +3,17 @@
     <div v-for="item in breadcrumb" :key="item.label" class="breadcrumb-link">
       <template v-if="linkComponent === 'nuxt-link' || linkComponent === 'router-link'">
         <component :is="linkComponent" :to="item.to">
-          {{ item.label }}
+          {{ item.label.toUpperCase() }}
         </component>
       </template>
       <template v-else>
         <component :is="linkComponent" :href="item.to">
-          {{ item.label }}
+          {{ item.label.toUpperCase() }}
         </component>
       </template>
-      <span class="arrow">
-        &gt;
-      </span>
+      <i class="arrow el-icon-arrow-right"></i>
     </div>
-    <span class="title">{{ formatTitle(title) }}</span>
+    <div class="page-title">{{ formatTitle(title).toUpperCase() }}</div>
   </div>
 </template>
 
@@ -56,42 +54,45 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style  lang="scss">
 @import '../../../assets/_variables.scss';
-.breadcrumb {
-  align-items: flex-start;
-  background: $grey;
+.breadcrumb { 
+  height:2.5rem;
+  box-sizing: border-box; 
+
   display: flex;
-  font-size: 12px;
-  margin-top: 0;
-  height: 40px;
-  line-height:40px;
+  background: $grey;
   color: $cochlear;
-  padding-left: 50px;
-    
+  font-size: 0.75rem;
+  line-height:0.88rem;
+  
+  padding-top:0.88rem;
+  padding-bottom:0.75rem;
+  padding-left: 3.75rem;
+   
   .breadcrumb-link {
     align-items: center;
     display: flex;
-    flex-shrink: 0;
-   
+    flex-shrink: 0; 
   }
 
   a {
-    font-size:12px !important;
-    font-weight: normal;
+    font-size:0.75rem;
+    line-height:0.88rem;
     text-decoration: none !important;
     color: $cochlear !important;
-    line-height:40px;
-    padding-right: 16px;
-    padding-left: 16px; 
-      &:hover{
-        font-weight: bold;
+    &:hover{
+      font-weight: bold;
     }
   }
 
   .arrow {
-    margin: 0 0.5rem;
-    transform: translateY(-1px);
+    font-size: 1rem;
+    padding:0 0.75rem;
+  }
+  
+  .page-title{
+    font-weight:bold;
   }
 }
 </style>
