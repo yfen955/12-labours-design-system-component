@@ -1,70 +1,69 @@
 @import '../_variables.scss';
 
-  .el-checkbox {
-  margin-left: 12px;
-  padding-top: 8px;
+.el-checkbox {
+    margin-left: 0.75rem;
+    padding-top: 0.5rem;
   &:first-child {
-    padding-top: 8px;
+    padding-top: 0.5rem;
   }
-}
 
-  .el-checkbox__inner{
-    background: $cochlear !important;
+  &__inner{
     display: inline-block;
     position: relative;
-    border: 1px solid #dcdfe6;
-    border-radius: 2px;
     box-sizing: border-box;
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid $lineColor1;
+    background-color:$cochlear  !important;
     z-index: 1;
-    transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46), 
-                background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46)
   }
+}
+
 
   .el-checkbox__input.is-checked .el-checkbox__inner{
-     &::after{
-        border:1px solid $blue !important;
-        border-left: 0 !important;
-        border-top: 0 !important;
-        height: 7px !important;
-        position: absolute !important;
-        left: 9px !important;
-        top: 5px !important;
+    &::after{
+      border:1px solid $blue !important;
+      border-left: 0 !important;
+      border-top: 0 !important;
+      height: 0.5rem !important;
+      position: absolute !important;
+      left: .6rem !important;
+      top: 0.31rem !important;
+      transform: rotate(45deg) scale(2.25) !important;
+      transition: transform 0s !important;
+    }
+  }
+
+  .el-checkbox__input{
+    .el-checkbox__inner{
+      &::after{
         transform: rotate(45deg) scale(2.25) !important;
         transition: transform 0s !important;
-        width: 3px !important;
-     }
-  }
-
-    .el-checkbox__input{
-        .el-checkbox__inner{
-        &::after{
-            transform: rotate(45deg) scale(2.25) !important;
-            transition: transform 0s !important;
-            border-style: hidden !important;
-            left: 9px !important;
+        border-style: hidden !important;
+        left: .6rem !important;
       }
-  }
-}
-
-    .el-checkbox__input.is-disabled .el-checkbox__inner {
-        background: $lineColor1 !important;
-        opacity: 35% !important;
-}
-
-    .el-checkbox__label {
-        line-height: 20px;
-        color:$grey;
-        font: {
-            size: 16px;
-            weight:normal;
-            family:$font-family;
     }
-}
+  }
 
-    .el-checkbox__input.is-disabled + span.el-checkbox__label{
-        @extend .el-checkbox__label;
-        color: $lineColor1 !important;       
-}
+  .el-checkbox__input.is-disabled .el-checkbox__inner {
+      background: $lineColor1 !important;
+      opacity: .35 !important;
+  }
+
+  .el-checkbox__label {
+      color:$grey;
+      font: {
+        size: 1rem;
+        family:$font-family;
+      }
+    }
+
+  .el-checkbox__input.is-disabled + span.el-checkbox__label{
+      @extend .el-checkbox__label;
+      color: $lineColor1 !important;     
+    }
+
+  .el-checkbox__input.is-checked + span.el-checkbox__label{
+      @extend .el-checkbox__label;
+      color: $grey !important;
+  }   
