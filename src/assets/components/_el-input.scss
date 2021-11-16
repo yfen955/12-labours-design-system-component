@@ -1,6 +1,5 @@
 @import '../_variables.scss';
 
-
 .el-input {
 
   &__inner {
@@ -23,7 +22,8 @@
       border-color: $grey !important;
     }
     &::placeholder {
-      @extend .placeholder;
+      font-style: italic;
+      color: $lineColor1;
     }
   }
 
@@ -44,9 +44,9 @@
     .el-input__inner {
       border-color: $lineColor2;
       color: $mediumGrey;
-      &:hover {
+      /*&:hover {
         border-color: $lineColor2 !important;
-      }
+      }*/
     }
   }
 }
@@ -110,11 +110,14 @@
 .el-textarea{
   &__inner {
     border-radius: 0.625rem;
+    &::placeholder {
+      font-style: italic;
+      color: $lineColor1;
+    }
   } 
 }
 
 //For Steppers
-
 .el-input-number__decrease{
   border-radius: 0.625rem 0 0 0.625rem;
 }

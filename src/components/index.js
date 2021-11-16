@@ -14,6 +14,7 @@ import TabNav from './TabNav'
 import Pagination from './Pagination'
 import PaginationMenu from './PaginationMenu'
 import Tooltip from './Tooltip'
+import MultilineText from './MultilineText'
 
 import '@/assets/icons'
 
@@ -25,7 +26,8 @@ const Components = {
   TabNav,
   Pagination,
   PaginationMenu,
-  Tooltip
+  Tooltip,
+  MultilineText
 }
 
 Object.keys(Components).forEach(component => {
