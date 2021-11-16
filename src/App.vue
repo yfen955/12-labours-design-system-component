@@ -4,13 +4,24 @@
     <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" />
     <div class="content-body">
       <el-button>hi</el-button>
-
+      <el-button disabled>Disabled</el-button>
+      <el-button size="medium">hi medium</el-button>
+      <a href="/">I am  default link</a><br/>
+      <div style="display:flex">
+        <div style="width:400px;">
+          <multiline-text
+          :max-length="maxLength"
+          resize="vertical"
+          placeholder-text="Enter your details"
+          @text-change="multiChange"/>
+        </div>
+        <div>{{txtMulti}}</div>
+      </div>
       <el-date-picker
         v-model="value1"
         type="date"
         placeholder="Pick a day">
       </el-date-picker>
-
       <el-select v-model="value" placeholder="Select">
         <el-option
           v-for="item in options"
@@ -26,35 +37,38 @@
           :active-tab="activeTab"
         />
       </div>
-      <pagination
-        :total-count="pageCount"
-        :selected="3"
-        @select-page="onPaginationChange"
-      />
-      <pagination-menu 
+       <pagination
+            :total-count="totalCount"
+            :page-size="pageSize"          
+            @select-page="onPaginationChange"
+          />       
+      <!--<pagination-menu 
         :page-size="pageSize"
         @update-page-size="updatePageSize"
-      />
-      <!-- <div class="radio-group">
-        <sparc-radio
-          v-for="item in radioData"
-          v-bind:key="item.label"
-          v-model="radioVal"
-          :label="item.label"
-          :disabled="item.disabled || false"
-          :display="item.display"
-        />
-      </div> -->
+      />-->
+      <div style="width:500px;padding:40px">
+      <el-collapse accordion>
+          <el-collapse-item title="I am Item1">
+            <span>Item1</span>
+          </el-collapse-item>
+          <el-collapse-item  title="I am Item2">
+            <span>Item2</span>
+          </el-collapse-item>
+          <el-collapse-item  title="I am Item3">
+            <span>Item3</span>
+          </el-collapse-item>
+        </el-collapse>
+      </div>
       <div class="tooltip">
-        <sparc-tooltip v-for="dir in tooltipDirs" :key="dir" :placement="dir">
+        <tooltip v-for="dir in tooltipDirs" :key="dir" :placement="dir">
           <div slot="data">{{ dir }}<br/>THIS IS <a href="#">ALOT</a> OF TEXT</div>
           <el-button slot="item">{{ dir }}</el-button>
-        </sparc-tooltip>
+        </tooltip>
       </div>
       <el-row type="flex" justify="center">
-        <el-select
+        <el-select disabled
           v-model="selectVal"
-          placeholder="Select"
+          placeholder="Select2"
         >
           <el-option-group
             v-for="group in selectOpts"
@@ -110,32 +124,6 @@ export default {
           name: 'past'
         }
       ],
-      pageSize: 10,
-      pageCount: 100,
-      // radioData: [
-      //   {
-      //     label: 1,
-      //     display: "one"
-      //   },
-      //   {
-      //     label: 2,
-      //     display: "two",
-      //     disabled: true
-      //   },
-      //   {
-      //     label: 3,
-      //     display: "three"
-      //   },
-      //   {
-      //     label: 4,
-      //     display: "four"
-      //   },
-      //   {
-      //     label: 5,
-      //     display: "five"
-      //   }
-      // ],
-      // radioVal: '',
       tooltipDirs: [
         'top-left',
         'top-center',
@@ -179,30 +167,46 @@ export default {
           ]
         },
       ], 
-      pageTitle: 'ABOUT',
+      pageTitle: 'News',
       breadcrumb: [
         {
           to: {
             name: 'index'
           },
           label: 'HOME'
+        },
+         {
+          to: {
+            name: 'index'
+          },
+          label: 'HOMBig titleE HOMBig titleE HOMBig titleE'
         }
-      ] 
+      ],
+      pageSize: 5,
+      totalCount:50,
+      currentPage:3,
+      maxLength: 100,
+      minLength:7,
+      txtMulti:''
     }
   },
   methods: {
-    onPaginationChange: function(page) {
-      console.log("page: " + page)
+      onPaginationChange: function(page) {
+      this.currentPage=page
     },
     updatePageSize: function(limit) {
       this.pageSize = limit === 'View All' ?  100 : limit
       this.pageCount = limit === 'View All' ?  100 : limit
+    },
+    multiChange:function(input){
+      this.txtMulti=input
     }
   }
 }
 </script>
 
 <style lang="scss">
+
 .content-body {
   padding-top: 1em;
 }
