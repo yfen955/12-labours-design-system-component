@@ -40,8 +40,8 @@ export default {
 .color-circle {
   border-radius: 50%;
   flex-shrink: 0;
-  height: 72px;
-  width: 72px;
+  height: 4.5rem;
+  width: 4.5rem;
 }
 p {
   font-size: 1rem;

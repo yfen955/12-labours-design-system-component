@@ -25,7 +25,7 @@ const createDemo = (typography) => {
         <typography-demo
           v-for="item in typography"
           :key="item.name"
-          class="mb-24"
+           class="mb-24"
           :typography="item"
         />
       </div>

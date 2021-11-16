@@ -2,15 +2,15 @@
   margin-bottom: 2rem;
   [class*='grid'] {
     background-color:pink;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
   .outside {
-    min-height: 80px;
+    min-height: 5rem;
   }
   .inside {
     background-color: #edf4ff;
-    min-height: 80px;
+    min-height: 5rem;
   }
   [class*='--aspect-ratio--'] {
     .inside,

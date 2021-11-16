@@ -45,12 +45,12 @@ export default {
 <style lang="scss" scoped>
 .typography-demo {
   display: flex;
-  font-size:14px;   //Not in requirements, but changed as default size looked much bigger here, after changing font-family to 'Arimo'
+  font-size:1rem;   
 }
 .details {
-  flex-basis: 250px;
+  flex-basis: 15.63rem;
   flex-shrink: 0;
-  margin-right: 50px;
+  margin-right: 3.13rem;
 }
 
 .example {
