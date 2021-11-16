@@ -47,57 +47,58 @@ export default {
 <style lang="scss">
 @import "@/assets/_variables.scss";
  .pagination {
-  padding-top: 1em;
+  padding: 1rem 0;
   text-align: center;
-  
-   
-  button.btn-prev {
-    background: none;
-    padding: 0px;
-    color: $blue;
-  }
 
-  button.btn-next {
-    background: none;
-    padding: 0px;
-    margin-left: 16px;
-    color: $blue;
-  }
+  ul.el-pager{
+    vertical-align:middle;
 
-  li.more,
-  li.number {
-    &.active{
-         background:$blue;
-         color:$cochlear;
-         font-weight: bold;
- }
-  
-    &:first-child{
-      margin-left: 16px;
+    li.more, li.number {
+      &:first-child{
+        margin-left: 1rem;
+      }
+
+      &:last-child{
+        margin-right: 1rem;
+      }
+
+      background: $cochlear;
+      border: 1px solid $blue;
+      color: $blue;
+
+      margin-left: 0.5rem;
+      border-radius: 50%;
+      min-width: 2rem; 
+      height: 2rem; 
+      font-size: 1rem; 
+      font-weight: 600;  
+
+      &.active{
+        background:$blue;
+        color:$cochlear;
+        font-weight: 700;
+      }
     }
-    background: $cochlear;
-    border: 1px solid $blue;
-    margin-left: 10px;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px; 
-    line-height: 22px; //22px aligns the text vertically to the middle.
-    min-width: 24px; 
-    font-size: 12px;
-    color: $blue;
-    font-weight: normal;
-    text-align: center;
+
+    li.active + li{
+      border-left: 1px solid !important;  //To prevent the fading of left border of item, next to active item
+    }
   }
 
-  .el-pager li.active + li{
-    border-left: 1px solid !important;
-  }
+  .el-pagination 
+  {
+    .btn-next,.btn-prev{
+      color: $blue;
+      .el-icon{       
+        font-size: 2rem;
+        font-weight:normal;
+      }
+    }
 
-  .el-pager .more::before{
-    line-height: 24px !important;
-  }
-
+    button:disabled{
+      opacity:0.3;
+    }
+  } 
 }
-
 
 </style>
