@@ -72,22 +72,22 @@ export default {
           {
             title: "terms-of-service",
             displayTitle: "Terms of Service",
-            href: "/"
+            href: "/terms-of-service"
           },
           {
             title: "privacy-policy",
             displayTitle: "Privacy Policy",
-            href: "/"
+            href: "/privacy"
           },
           {
             title: "site-feedback",
             displayTitle: "Site Feedback",
-            href: `/`
+            href: "/site-feedback"
           },
           {
             title: "contact",
             displayTitle: "Contact",
-            href: "/"
+            href: "/contact"
           }
         ]
       }
@@ -137,20 +137,20 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height:222px;
+  height:13.88rem;
   background-color: $grey;
-  padding:0px 60px;
+  padding:0 3.75rem;
   justify-content:space-between;   
 }
 
 .logo-wrapper{
-  margin:11px 0px;
+  margin:0.75rem 0rem;
 }
 
 .logo
 {
-  height: 200px;   
-  width: 233px;  
+  height: 12.5rem;   
+  width: 14.6rem;  
   white-space: nowrap;
 }
 
@@ -161,27 +161,27 @@ export default {
   justify-content: center;
 
   &__links{
-    margin-top:40px;
-    margin-bottom:0px;
-  ul {
-    list-style: none;
-    text-align:right; 
-    margin:0px;
-    padding:0px;
-    li {
-      margin-bottom:12px;
-      a {
-        text-decoration: none  !important;
-        font: normal normal 600 16px/18px $font-family;
-        color: $cochlear !important; 
-        &.active,
-        &:hover,
-        &:focus {
-          color: $cochlear;
+    margin-top:2.5rem;
+    margin-bottom:0rem;
+    ul {
+      list-style: none;
+      text-align:right; 
+      margin:0rem;
+      padding:0rem;
+      li {
+        margin-bottom:0.75rem;
+        a {
+          text-decoration: none  !important;
+          font: normal normal 600 1rem/1.125rem $font-family;
+          color: $cochlear !important; 
+          &.active,
+          &:hover,
+          &:focus {
+            color: $cochlear;
+          }
         }
       }
     }
-  }
   }
 }  
 
@@ -189,18 +189,18 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-top:0px;
-    margin-bottom:40px;
+    margin-top:0rem;
+    margin-bottom:2.5rem;
     
 }
 
 .svg-fill{
   color:$grey;
   background: #FFFFFF 0% 0% no-repeat padding-box;
-  height:26px;
-  width:26px;
-  padding:4px;
-  margin-left:12px;
+  height:1.63rem;
+  width:1.63rem;
+  padding:0.25rem;
+  margin-left:0.75rem;
   border-radius:2px;
 }
 </style>

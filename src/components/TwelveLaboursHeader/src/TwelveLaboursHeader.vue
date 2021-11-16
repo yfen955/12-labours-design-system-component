@@ -302,7 +302,7 @@ export default {
 @import "@/assets/_variables.scss";
 
 .nav {
-  height: 4em;
+  height: 4rem;
   padding: 0;
   padding-top: 1rem;
 }
@@ -310,7 +310,7 @@ export default {
 @media (min-width: 320px) and (max-width: 1023px) {
   .overlay {
     position: absolute;
-    top: 56px;
+    top: 3.5rem;
     left: 0;
     width: 100%;
     height: 100%;
@@ -322,7 +322,7 @@ export default {
 @media (min-width: 320px) and (max-width: 1023px) {
   .search-overlay {
     position: absolute;
-    top: 56px;
+    top: 3.5rem;
     left: 0;
     width: 100%;
     height: 100%;
@@ -341,7 +341,7 @@ export default {
     background-color: $lightGrey;
     height: 1px;
     margin-left: 0;
-    margin-top: 11px;
+    margin-top: 0.7rem;
   }
 }
 
@@ -365,12 +365,12 @@ export default {
 .header__nav--main {
   display: flex;
   flex-direction: row;
-  height: 100px;  
+  height: 6.25rem;  
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%); 
   @media (min-width: 320px) and (max-width: 1023px) {
-    height: 41px;
+    height: 2.6rem;
     padding-left: 0;
-    padding-top: 9px;
+    padding-top: 0.56rem;
     .nav-main-container__mobile-menu {
       padding-left: 2px;
     }
@@ -386,9 +386,9 @@ export default {
       display: flex;
       flex-direction: column;
       a {
-        font-size: 12px;
+        font-size: 0.75rem;
         margin-left: 0.5rem;
-        line-height:24px;
+        line-height:1.5rem;
         font-weight:400;
       }
 
@@ -406,10 +406,10 @@ export default {
   /*  //old - not needed right now, will check later if needed for smaller screens
   a {
     color: $app-secondary-color;
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 1rem;
+    line-height: 2rem;
     font-weight: 500;
-    padding-top: 5px;
+    padding-top: 0.3rem;
     text-decoration: none;
   }*/
 } 
@@ -419,7 +419,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding:0px 60px;
+  padding:0rem 3.75rem;
   align-items: center;    
 
   @media (min-width: 320px) and (max-width: 1023px) {
@@ -427,7 +427,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
-    padding-left:2px;    //new
+    padding-left:2px;   
     width: 100%;
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%);
   }
@@ -452,15 +452,15 @@ export default {
 
 .logo
 {
-  height: 100px;   
-  width: 117px;  
+  height: 6.25rem;   
+  width: 7.3rem;  
   white-space: nowrap;
 
   @media (min-width: 320px) and (max-width: 1023px) {
     height: 2rem;
-    width:  60px;
+    width:  3.75rem;
     margin-right: 0;
-    padding:4px;
+    padding:0.25rem;
   }
 }
 
@@ -469,24 +469,24 @@ export default {
   flex-direction: row;
   justify-content: flex-end;
   margin-left: auto;     //To align only this item of flexbox to right
-  width: 40%;     //old - was 54%
+  width: 40%;     
   @media (min-width: 320px) and (max-width: 1023px) {
     width: 0;
   }
 }
 
 .nav-main-container__login-input {
-  width: 30vw;
-  height: 34px;
+  width: 1.88rem;
+  height: 2.13rem;
 
   @media screen and (max-width: 1023px) {
     display: none;
   }
   .el-select {
-    width: 150px;
+    width: 9.38rem;
     ::v-deep .el-input--suffix {
       .el-input__inner {
-        border-radius: 4px 0px 0px 5px; 
+        border-radius: 0.25rem 0rem 0rem 0.25rem; 
         border: solid 1px $lightGrey;
       }
     }
@@ -494,8 +494,8 @@ export default {
 }
 
 .nav-main-container__login-button {
-  width: 128px;
-  height: 32px;
+  width: 8rem;
+  height: 2rem;
 
   border: none;
   cursor: pointer;
@@ -508,19 +508,19 @@ export default {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #909399;
   opacity: 1; /* Firefox */
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
-  line-height: 32px;
-  padding-left: 7px;
+  line-height: 2rem;
+  padding-left: 0.5rem;
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: lightgray;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
-  line-height: 32px;
-  padding-left: 7px;
+  line-height: 2rem;
+  padding-left: 0.5rem;
 }
 
 .nav-main-container__mobile-menu {
@@ -528,11 +528,11 @@ export default {
   border: none;
   color: #000;
   display: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 0;
   outline: none;
-  padding: 10px;
-  transform: translate(12px, -8px);
+  padding: 0.625rem;
+  transform: translate(0.75rem, -0.5rem);
   -webkit-appearance: none;
 
   &:hover:not(:active),
@@ -549,7 +549,7 @@ export default {
 
 .mobile-navigation {
   height: 100%;  
-  margin-left: 50px; 
+  margin-left: 3.13rem; 
   width: 120%; 
   ul {
     padding-left: 0;
@@ -566,8 +566,7 @@ export default {
       a {
         text-decoration: none  !important;
         color:$app-primary-color !important;
-        letter-spacing: 0px;  //new
-        font: normal normal normal 16px/18px $font-family;   
+        font: normal normal normal 1rem/1.13rem $font-family;   
 
         &.active,
         &:hover,
@@ -579,9 +578,9 @@ export default {
 
     @media (min-width: 320px) and (max-width: 1023px) {
       a {
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 300;
-        line-height: 32px;
+        line-height: 2rem;
       }
     }
   }
@@ -594,7 +593,7 @@ export default {
       margin-left:0px;    
       flex-direction: column;
       left: 0;
-      padding: 1em;
+      padding: 1rem;
       position: fixed;
       right: 6rem;
       top: 3.2rem;
@@ -645,7 +644,7 @@ export default {
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 25%), 0 2px 2px 0 rgb(33 43 54 / 20%);
 
     &__close {
-      width: 27px;
+      width: 1.7rem;
       height: 3rem;
       position: inherit;
       right: 0.8rem;
@@ -655,13 +654,13 @@ export default {
 
     &--icon {
       color: $neutralGrey;
-      width: 20px;
-      height: 20px;
+      width: 1.25rem;
+      height: 1.25rem;
     }
 
     input {
       height: 100%;
-      font-size: 16px;
+      font-size: 1rem;
       width: 90%;
       border:none;
       &:focus-visible {
@@ -672,7 +671,7 @@ export default {
 
   input {
     height: 2rem;
-    font-size: 16px;
+    font-size: 1rem;
     width: 90%;
   }
 
@@ -680,29 +679,29 @@ export default {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: lightgrey;
     opacity: 1; /* Firefox */
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 32px;
-    padding-left: 7px;
+    line-height: 2rem;
+    padding-left: 0.5rem;
   }
 
   :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: lightgrey;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
-    line-height: 32px;
-    padding-left: 7px;
+    line-height: 2rem;
+    padding-left: 0.5rem;
   }
 }
 
 .data-portal-title {
-  font-size: 14px;
-  color: #303133;
-  line-height: 14px;
+  font-size: 0.875rem;
+  color:$mediumGrey;
+  line-height: 0.875rem;
   position: relative;
-  bottom: 5px;
-  margin-left: 5px;
+  bottom: 0.313rem;
+  margin-left: 0.313rem;
   user-select: none;
 }
 </style>
