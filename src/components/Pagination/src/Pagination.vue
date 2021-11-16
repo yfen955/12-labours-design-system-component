@@ -91,7 +91,7 @@ export default {
       color: $blue;
       .el-icon{       
         font-size: 2rem;
-        font-weight:normal;
+        font-weight:400;
       }
     }
 
