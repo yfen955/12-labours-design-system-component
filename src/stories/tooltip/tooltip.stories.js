@@ -1,4 +1,4 @@
-import SparcTooltip from '@/components/SparcTooltip/src/SparcTooltip.vue'
+import Tooltip from '@/components/Tooltip/src/Tooltip.vue'
 import './demo-styles.scss';
 
 export default {
@@ -8,7 +8,7 @@ export default {
 
 export const Primary = () => ({
   components: {
-    SparcTooltip
+    Tooltip
   },
 
   data() {
@@ -41,9 +41,9 @@ export const Primary = () => ({
   template: `
     <div>
       <el-row v-for="dirs in tooltipDirs" type="flex" justify="center">
-        <sparc-tooltip v-for="dir in dirs" :key="dir" :placement="dir" :content="dir">
+        <tooltip v-for="dir in dirs" :key="dir" :placement="dir" :content="dir">
           <el-button slot="item">{{ dir }}</el-button>
-        </sparc-tooltip>
+        </tooltip>
       </el-row>
     </div>
   `
@@ -51,15 +51,15 @@ export const Primary = () => ({
 
 export const SingleContent = () => ({
   components: {
-    SparcTooltip,
+    Tooltip,
   },
 
   template: `
     <div>
       <el-row type="flex" justify="center">
-        <sparc-tooltip placement="top-center" content="Sample content text">
+        <tooltip placement="top-center" content="Sample content text">
           <el-button slot="item">Hover over me!</el-button>
-        </sparc-tooltip>
+        </tooltip>
       </el-row>
     </div>
   `
@@ -67,16 +67,16 @@ export const SingleContent = () => ({
 
 export const MoreContent = () => ({
   components: {
-    SparcTooltip,
+    Tooltip,
   },
 
   template: `
     <div>
       <el-row type="flex" justify="center">
-        <sparc-tooltip placement="top-center">
+        <tooltip placement="top-center">
           <div slot="data">This is multi-line<br/>content sample text</div>
           <el-button slot="item">Hover over me!</el-button>
-        </sparc-tooltip>
+        </tooltip>
       </el-row>
     </div>
   `
@@ -84,15 +84,15 @@ export const MoreContent = () => ({
 
 export const Item = () => ({
   components: {
-    SparcTooltip,
+    Tooltip,
   },
 
   template: `
     <div>
       <el-row type="flex" justify="center">
-        <sparc-tooltip placement="top-center" content="top-center">
+        <tooltip placement="top-center" content="top-center">
           <el-button slot="item">Hover over me!</el-button>
-        </sparc-tooltip>
+        </tooltip>
       </el-row>
     </div>
   `
@@ -100,16 +100,16 @@ export const Item = () => ({
 
 export const LinkContent = () => ({
   components: {
-    SparcTooltip,
+    Tooltip,
   },
 
   template: `
     <div>
       <el-row type="flex" justify="center">
-        <sparc-tooltip placement="top-center">
+        <tooltip placement="top-center">
           <div slot="data">Content with <a href="#">link</a></div>
           <el-button slot="item">Hover over me!</el-button>
-        </sparc-tooltip>
+        </tooltip>
       </el-row>
     </div>
   `
