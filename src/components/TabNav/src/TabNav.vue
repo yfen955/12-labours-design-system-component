@@ -44,9 +44,9 @@
     &.is-top{
       .el-tabs__item {    
         color:$text-color;
-        line-height:21px;
-        font-size:18px; 
-        height:36px;   
+        line-height:1.3rem;
+        font-size:1.13rem; 
+        height:2.25rem;   
         &.is-active {
           color:$app-primary-color;
           font-weight:700;
@@ -55,10 +55,10 @@
     }
   }
   &__active-bar {
-    height: 5px;
+    height: 0.3rem;
   }
   &__header{
-    margin:0px;
+    margin:0;
   }
 }
 

@@ -1,38 +1,35 @@
 // Primary colors
-$purple: #8300BF;         //must be deleted later
-$darkBlue: #24245B;
-$blue: #00467F;           // modified, new primary with new code (previous #0026FF)
-$grey: #262626;           // modified, new grey code (previous #303133)
+$darkBlue: #24245B;     //TBC- if needed 
+$blue: #00467F;         
+$grey: #262626;    
 
 // Secondary colors
-$lightPurple: #BC00FC;    //must be deleted later
-$red: #D11241;      //added, new secondary
-$mildBlue: #0080A7;       // added, new secondary 
+$red: #D11241;      
+$mildBlue: #0080A7;       
 
-// Status colors         //New status colors not mentioned, kept the old one
+// Status colors        
 $success: #5e9f69;
 $warning: #FF8400;
 $danger: #b51d09;
 
-// Text colors
-$neutralGrey: #616161;
-$mediumGrey: #606266;
-$lightGrey: #F8F8F8;    //modified
+// Some other colors
+$neutralGrey: #616161;      //TBC- if needed 
+$mediumGrey: #606266;    
+$lightGrey: #F8F8F8;    
+$darkRed: #AC0E35;
 
 // Line colors
-$lineColor1: #D1D1D1;       // modified, new line color 1 (previous #DCDFE6)
-$lineColor2: #E4E7ED;
+$lineColor1: #D1D1D1;      
+$lineColor2: #DFDFDF;  
 
 // Background colors
 $background: $lightGrey; 
 $cochlear: #FFFFFF;
 $tooltipColor: #f3ecf6;
 
-//Search box colors
-$darkGrey: #606266;
-
-$app-primary-color: $blue;  //modified  
-$app-secondary-color: $red;     //modified
+//Main colors
+$app-primary-color: $blue; 
+$app-secondary-color: $red;    
 $text-color: $grey;
 $input-text: $grey;
 

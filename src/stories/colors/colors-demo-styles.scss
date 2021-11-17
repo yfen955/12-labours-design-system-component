@@ -5,63 +5,63 @@
    }
 
 :export {
-        //Primary
-        blueName: unquote('Blue');
-        blueVariable:unquote("$blue");
-        blueHex:$blue;
-        blueRgb:get-rgb($blue);
-        blueCmyk:0,0,0,85;
+    //Primary
+    blueName: unquote('Blue');
+    blueVariable:unquote("$blue");
+    blueHex:$blue;
+    blueRgb:get-rgb($blue);
+    blueCmyk:0,0,0,85;
 
-        greyName:unquote('Text Grey');
-        greyVariable:unquote("$grey");
-        greyHex:$grey;
-        greyRgb:get-rgb($grey);
-        greyCmyk:100,0,45,50;
+    greyName:unquote('Text Grey');
+    greyVariable:unquote("$grey");
+    greyHex:$grey;
+    greyRgb:get-rgb($grey);
+    greyCmyk:100,0,45,50;
 
-        //Secondary
-        redName:unquote('Red');
-        redVariable:unquote("$red");
-        redHex:$red;
-        redRgb:get-rgb($red);
-        redCmyk: 0,61,91,18;
+    //Secondary
+    redName:unquote('Red');
+    redVariable:unquote("$red");
+    redHex:$red;
+    redRgb:get-rgb($red);
+    redCmyk: 0,61,91,18;
 
-        mediumBlueName:unquote('Mild Blue');
-        mediumBlueVariable:unquote("$mildBlue");
-        mediumBlueHex:$mildBlue;
-        mediumBlueRgb:get-rgb($mildBlue);
-        mediumBlueCmyk: 100,0,23,35;
+    mediumBlueName:unquote('Mild Blue');
+    mediumBlueVariable:unquote("$mildBlue");
+    mediumBlueHex:$mildBlue;
+    mediumBlueRgb:get-rgb($mildBlue);
+    mediumBlueCmyk: 100,0,23,35;
 
-        //Status 
-        successName: unquote('Success');
-        successVariable:unquote("$success");
-        successHex:$success;
-        successRgb:get-rgb($success);
-        successCmyk: 41,0,34,38;
+    //Status 
+    successName: unquote('Success');
+    successVariable:unquote("$success");
+    successHex:$success;
+    successRgb:get-rgb($success);
+    successCmyk: 41,0,34,38;
 
-        warningName: unquote('Warning');
-        warningVariable:unquote("$warning");
-        warningHex:$warning;
-        warningRgb:get-rgb($warning);
-        warningCmyk: 100,0,23,35;
+    warningName: unquote('Warning');
+    warningVariable:unquote("$warning");
+    warningHex:$warning;
+    warningRgb:get-rgb($warning);
+    warningCmyk: 100,0,23,35;
 
-        dangerName: unquote('Danger');
-        dangerVariable:unquote("$danger");
-        dangerHex:$danger;
-        dangerRgb:get-rgb($danger);
-        dangerCmyk: 0,84,95,29;
+    dangerName: unquote('Danger');
+    dangerVariable:unquote("$danger");
+    dangerHex:$danger;
+    dangerRgb:get-rgb($danger);
+    dangerCmyk: 0,84,95,29;
 
-        //Line 
-        line1Name: unquote('Line Grey');
-        line1Variable:unquote("$lineColor1");
-        line1Hex:$lineColor1;
-        line1Rgb:get-rgb($lineColor1);
-        line1Cmyk: 41,0,34,38;
+    //Line 
+    line1Name: unquote('Line Grey');
+    line1Variable:unquote("$lineColor1");
+    line1Hex:$lineColor1;
+    line1Rgb:get-rgb($lineColor1);
+    line1Cmyk: 41,0,34,38;    
 
-        //Background
-        backgroundName: unquote('Light Grey');
-        backgroundVariable:unquote("$background");
-        backgroundHex:$background;
-        backgroundRgb:get-rgb($background);
-        backgroundCmyk: 0,0,340,3;
-  } 
+    //Background
+    backgroundName: unquote('Light Grey');
+    backgroundVariable:unquote("$background");
+    backgroundHex:$background;
+    backgroundRgb:get-rgb($background);
+    backgroundCmyk: 0,0,340,3;
+} 
 

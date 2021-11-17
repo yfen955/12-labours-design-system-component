@@ -9,15 +9,14 @@ export const primary = [
     usage: 'Repeating major elements across the site like links and buttons',
     variable: colorStyles.blueVariable
   },
-  /* from old system
   {
     name: 'Dark Blue',
     hex: '#24245b',
     rgb: '36-36-91',
     cmyk: '22, 22, 0, 64',
-    usage: 'Repeating major elements across the site like heros, icons and header text',
+    usage: 'From Sparc: being rarely used now',
     variable: '$darkBlue'
-  },*/
+  },
   {
     name: colorStyles.greyName,
     hex: colorStyles.greyHex,
@@ -34,7 +33,7 @@ export const secondary = [
     hex: colorStyles.redHex,
     rgb: colorStyles.redRgb,
     cmyk: colorStyles.redCmyk,
-    usage: 'Decorative elements such as illustrations',
+    usage: 'Mainly used in buttons',
     variable: colorStyles.redVariable
   },
   {
@@ -83,21 +82,13 @@ export const text = [
     usage: 'Typography and icons',
     variable: colorStyles.greyVariable
   },
-  { //From old system
+  { 
     name: '',
     hex: '#606266',
     rgb: '96-98-102',
     cmyk: '2, 2, 0, 60',
     usage: 'For footer text',
     variable: '$mediumGrey'
-  },
-  { //From old system
-    name: '',
-    hex: '#909399',
-    rgb: '144-147-153',
-    cmyk: '4, 2, 0, 60',
-    usage: 'For labels and ghost text',
-    variable: '$lightGrey'
   }
 ]
 
@@ -107,15 +98,15 @@ export const line = [
     hex: colorStyles.line1Hex,
     rgb: colorStyles.line1Rgb,
     cmyk: colorStyles.line1Cmyk,
-    usage: 'For cards',
+    usage: 'For borders',
     variable: colorStyles.line1Variable
   },
-  { //From old system
+  { 
     name: '',
-    hex: '#e4e7ed',
-    rgb: '228-231-237',
-    cmyk: '4, 2, 0, 7',
-    usage: 'For table/dividers/breadcrumb backgrounds',
+    hex: '#DFDFDF',
+    rgb: '223, 223, 223',
+    cmyk: '0, 0, 0, 13',
+    usage: 'For dividers',
     variable: '$lineColor2'
   }
 ]

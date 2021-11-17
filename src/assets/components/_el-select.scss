@@ -3,28 +3,38 @@
 .el-select {
   .el-input {
     input::placeholder {
-      padding-top: 10px;
+      padding-top: 0.625rem;
       color:$input-text;
     }
     .el-select__caret::before{
       content: '\e605';
       color:#808080;
-      font-size: 25px;
+      font-size: 1.6rem;
     }
     .el-select__caret.is-reverse {
-      padding-top: 8px;
+      padding-top: 0.5rem;
+    }
+
+    &__inner {
+      &:hover {
+        border-color: $lightGrey !important;
+      }
+      &:focus {
+        border-color: $grey !important;
+      }
     }
 
     &.is-disabled {
       input {
-        border-color: $mediumGrey;
+        border-color:  $lineColor1;
       }
-      .el-select__caret {
+      .el-select__caret{
         color: $lightGrey;
       }
+      
       .el-input__inner {
         &:hover {
-          border-color: $mediumGrey !important;
+          border-color: $lightGrey !important;
         }
       }
     }
@@ -43,7 +53,7 @@
   }
 
   &.dropdown1 {
-    max-width: 150px;
+    max-width: 9.38rem;
   }
 
   &.dropdown2 {
@@ -61,7 +71,7 @@
 
 .el-select-group__title {
   color: $mediumGrey;
-  font-size: 14px;
+  font-size: 0.88rem;
   font-weight: bold;
 }
 

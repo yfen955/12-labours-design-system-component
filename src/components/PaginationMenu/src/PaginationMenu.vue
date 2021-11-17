@@ -82,19 +82,19 @@ export default {
 .filter-dropdown {
   display: flex;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   border: solid 1px $mediumGrey;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
-  color: $purple;
-  margin-left: 5px;
+  color:$blue;
+  margin-left: 0.31rem;
 }
 
 .icon-arrow {
   color: $mediumGrey;
-  height: 5px;
-  width: 8px;
+  height: 0.31rem;
+  width: 0.5rem;
 }
 
 .el-dropdown-link {
@@ -103,8 +103,8 @@ export default {
 }
 
 .el-dropdown-text-link {
-  margin-right: -6px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  margin-right: -0.38rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 </style>

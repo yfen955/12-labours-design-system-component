@@ -106,6 +106,7 @@ export const body = [
     name: 'Body 1',
     fontWeight: regularWeight.code,
     weightDisplay: regularWeight.displayName,
+    itemClass:'body',
     ...defaultBody
   },
   {

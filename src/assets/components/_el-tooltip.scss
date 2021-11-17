@@ -3,20 +3,20 @@
 .el-tooltip {
   &__popper {
     background: $tooltipColor !important;
-    border: 1px solid $purple;
-    border-radius: 4px;
-    color: #303133 !important;
-    font-size: 12px;
-    line-height: 18px;
+    border: 1px solid $blue;
+    border-radius: 0.25rem;
+    color:$darkBlue !important;
+    font-size: 0.75rem;
+    line-height: 1.13rem;
     a:not(.underline){
       text-decoration: underline;
-      color: #303133;
+      color:$darkBlue;   
     }
   }
 }
 
 .el-tooltip__popper[x-placement^="top"] .popper__arrow {
-  border-top-color: $purple;
+  border-top-color:$blue;
   border-bottom-width: 0;
 }
 .el-tooltip__popper[x-placement^="top"] .popper__arrow::after {
@@ -26,7 +26,7 @@
 
 .el-tooltip__popper[x-placement^="bottom"] .popper__arrow {
   border-top-width: 0;
-  border-bottom-color: $purple;
+  border-bottom-color:$blue;
 }
 .el-tooltip__popper[x-placement^="bottom"] .popper__arrow::after {
   border-top-width: 0;
@@ -34,7 +34,7 @@
 }
 
 .el-tooltip__popper[x-placement^="right"] .popper__arrow {
-  border-right-color: $purple;
+  border-right-color:$blue;
   border-left-width: 0;
 }
 .el-tooltip__popper[x-placement^="right"] .popper__arrow::after {
@@ -44,7 +44,7 @@
 
 .el-tooltip__popper[x-placement^="left"] .popper__arrow {
   border-right-width: 0;
-  border-left-color: $purple;
+  border-left-color:$blue;
 }
 .el-tooltip__popper[x-placement^="left"] .popper__arrow::after {
   border-right-width: 0;

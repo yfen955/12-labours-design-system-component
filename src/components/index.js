@@ -13,7 +13,8 @@ import TwelveLaboursFooter from './TwelveLaboursFooter'
 import TabNav from './TabNav'
 import Pagination from './Pagination'
 import PaginationMenu from './PaginationMenu'
-import SparcTooltip from './SparcTooltip'
+import Tooltip from './Tooltip'
+import MultilineText from './MultilineText'
 
 import '@/assets/icons'
 
@@ -25,7 +26,8 @@ const Components = {
   TabNav,
   Pagination,
   PaginationMenu,
-  SparcTooltip
+  Tooltip,
+  MultilineText
 }
 
 Object.keys(Components).forEach(component => {

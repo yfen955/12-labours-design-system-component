@@ -1,67 +1,63 @@
 @import "../_variables.scss";
 
 .el-radio {
-  margin-left: 12px;
-  padding-top: 8px;
+  margin-left: 0.75rem;
+  padding-top: 0.5rem;
   &:first-child {
-    padding-top: 8px;
+    padding-top:  0.5rem;
   }
 }
 
 .el-radio__input {
-    &.is-disabled {
-      background-color:$cochlear;
-      border: 1px solid $lineColor1;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      opacity: 35%;
-    &.is-checked {
-      .el-radio__inner {
-        background-color: $lineColor1;
+  .el-radio__inner {
+    &:hover{
+      border-color: $lineColor1 !important;
+    }
+    background-color: $cochlear;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &.is-checked{
+    .el-radio__inner {
+      &:hover{
+        border-color: $lineColor1 !important;
+      }
+      background-color: $cochlear;
+      border:1px solid $blue;
+      width: 1.5rem;
+      height: 1.5rem;
+      &::after {
+        background: $blue !important;
+        border:1px solid $blue;
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
       }
     }
   }
+
+  &.is-disabled {
+    background-color:$cochlear;
+    border: 1px solid $lineColor1;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    opacity: 0.35;
+  }
 }
 
-.el-radio__input {
-    .el-radio__inner {
-        &:hover{
-            border-color: $lineColor1 !important;
-        }
-        background-color: $cochlear;
-        width: 24px;
-        height: 24px;
-    }
-        &.is-checked{
-            .el-radio__inner {
-              &:hover{
-                border-color: $lineColor1 !important;
-            }
-            background-color: $cochlear;
-            border:1px solid $blue;
-            width: 24px;
-            height: 24px;
-            &::after {
-                background: $blue !important;
-                border:1px solid $blue;
-                border-radius: 50%;
-                width: 16px;
-                height: 16px;
-            }
-          }
-        }
-    }
-
 .el-radio__label {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight:normal;
-    color:$grey;
-    font-family:$font-family;
+  font-size: 1rem;
+  color:$grey;
+  font-family:$font-family;
 }
 
 .el-radio__input.is-disabled + span.el-radio__label{
-    @extend.el-radio__label;
-    color: $lineColor1 !important; 
+  @extend.el-radio__label;
+  color: $lineColor1 !important; 
+}
+.el-radio__input.is-checked + span.el-radio__label{
+  @extend.el-radio__label;
+  color: $grey !important;
 }

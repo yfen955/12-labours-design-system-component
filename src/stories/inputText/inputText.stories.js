@@ -254,14 +254,12 @@ export const Multiline= () => ({
     <div class="body2 label mr-32">
       Multiline Field Title
     </div>
-    <el-input class="multiline field1"
-      v-model="value" 
-      type="textarea"
-      resize="none"
-      :maxlength="maxLength"
-      :rows="5"/>
-    <div class="field-info label mr-32">
-      Max length: {{maxLength}} - Used: {{value.length}} - Remaining: {{maxLength-(value.length)}}
+    <div class="multiline">
+      <multiline-text
+      :max-length="maxLength"
+      resize="vertical"
+      placeholder-text="Enter your details"
+      @text-change="multiChange"/>
     </div>
   </div>
   `
