@@ -5,7 +5,7 @@
     <div class="content-body">
       <el-button>hi</el-button>
       <el-button disabled>Disabled</el-button>
-      <el-button size="medium">hi medium</el-button>
+      <h4> I am heading 4</h4>
       <a href="/">I am  default link</a><br/>
       <div style="display:flex">
         <div style="width:400px;">
