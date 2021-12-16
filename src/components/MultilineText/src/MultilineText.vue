@@ -28,7 +28,8 @@ export default {
     },
     maxLength: {
       type: Number,
-      required:true
+      required:true,
+      default: 150
     },
     minLength: {
       type: Number
