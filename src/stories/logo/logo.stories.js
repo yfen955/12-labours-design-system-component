@@ -1,7 +1,4 @@
-//import SparcLogo from '@/components/TwelveLaboursLogo/TwelveLaboursLogo.vue'
-import TwelveLaboursLogo from '@/components/TwelveLaboursLogo/TwelveLaboursLogo.vue'
-
-
+import TwelveLaboursLogo from '@/components/TwelveLaboursLogo/src/TwelveLaboursLogo.vue'
 import './demo-styles.scss';
 
 export default {
