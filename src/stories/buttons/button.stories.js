@@ -43,15 +43,7 @@ export const Secondary = () => ({
     </div>
   `
 })
-export const SecondaryAlt = () => ({
-  props: defaultProps(),
-  template: `
-    <div>
-      <el-button class="secondary alt">{{ text }}</el-button>
-      <el-button class="secondary alt" :disabled="isDisabled">Disabled Button</el-button>
-    </div>
-  `
-})
+
 export const Danger = () => ({
   props: defaultProps(),
   template: `

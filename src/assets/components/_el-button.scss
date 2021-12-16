@@ -17,7 +17,10 @@
     background:$darkRed; 
     color: $cochlear ;
   }
-  &:focus,
+  &:focus{
+    background: $red;
+    color: $cochlear;
+  }
   &[disabled],
   &[disabled]:hover,
   &[disabled]:focus {
@@ -59,11 +62,6 @@
     border: 2px solid $lineColor1;
     color:  $mediumGrey;
     opacity:.35;
-    &.alt {
-      background: $cochlear;
-      border-color: $mediumGrey;
-      color: $mediumGrey;
-    }
   }
 
   &.danger,
