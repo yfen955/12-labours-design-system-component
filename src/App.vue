@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <TwelveLaboursHeader linkComponent="router-link" :currentPath="$route.name"/>
-    <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" />
+    <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" linkComponent="router-link" />
     <div class="content-body">
       <el-form label-position="top">
-        <el-form-item required=true label="What area would you like to know more">
+        <el-form-item label="What area would you like to know more">
            <el-select v-model="value" placeholder="Select">
             <el-option
               v-for="item in options"
@@ -89,7 +89,7 @@
         </el-select>
       </el-row>
     </div>
-    <TwelveLaboursFooter>
+    <TwelveLaboursFooter linkComponent="router-link">
     </TwelveLaboursFooter>
   </div>
 </template>
