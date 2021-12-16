@@ -25,7 +25,7 @@
 /****************    CODE   ****************/
 
 <script>
-import TwelveLaboursLogo from "../../TwelveLaboursLogo/TwelveLaboursLogo.vue";
+import TwelveLaboursLogo from "../../TwelveLaboursLogo/src/TwelveLaboursLogo.vue";
 import FooterLinks from "../../FooterLinks/src/FooterLinks.vue";
 
 export default {
