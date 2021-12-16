@@ -85,7 +85,8 @@
         </el-select>
       </el-row>
     </div>
-    <TwelveLaboursFooter/>
+    <TwelveLaboursFooter>
+    </TwelveLaboursFooter>
   </div>
 </template>
 
@@ -222,5 +223,12 @@ export default {
   align-content: space-around;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.footer-logo
+{
+  height: 12.5rem;   
+  width:14.56rem;  
+  white-space: nowrap;
 }
 </style>
