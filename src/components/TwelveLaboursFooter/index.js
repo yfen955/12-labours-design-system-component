@@ -5,4 +5,5 @@ TwelveLaboursFooter.install = function(Vue) {
   Vue.component(TwelveLaboursFooter.name, TwelveLaboursFooter);
 };
 
-export default TwelveLaboursFooter;
+
+export default TwelveLaboursFooter

@@ -1,36 +1,40 @@
 <template>
   <div id="app">
     <TwelveLaboursHeader linkComponent="router-link" :currentPath="$route.name"/>
-    <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" />
+    <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" linkComponent="router-link" />
     <div class="content-body">
-      <el-button>hi</el-button>
-      <el-button disabled>Disabled</el-button>
-      <el-button size="medium">hi medium</el-button>
-      <a href="/">I am  default link</a><br/>
-      <div style="display:flex">
-        <div style="width:400px;">
-          <multiline-text
-          :max-length="maxLength"
-          resize="vertical"
-          placeholder-text="Enter your details"
-          @text-change="multiChange"/>
-        </div>
-        <div>{{txtMulti}}</div>
-      </div>
+      <el-form label-position="top">
+        <el-form-item label="What area would you like to know more">
+           <el-select v-model="value" placeholder="Select">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          <div class="error">error message</div>
+        </el-form-item>
+        <el-form-item label="Input test">
+           <el-input v-model="value" placeholder="Input">   
+          </el-input>
+          <div class="error">error message</div>
+        </el-form-item>
+         <el-form-item label="Multi test">
+            <multiline-text 
+              placeholder-text="Enter your details"
+              :max-length="maxLength"
+              @text-change="multiChange"/>
+          <div class="error">error message</div>
+        </el-form-item>
+      </el-form>
+
       <el-date-picker
         v-model="value1"
         type="date"
         placeholder="Pick a day">
       </el-date-picker>
-      <el-select v-model="value" placeholder="Select">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-
+     
       <div style="padding: 2em;">
         <tab-nav
           :tabs="tabs"
@@ -85,7 +89,8 @@
         </el-select>
       </el-row>
     </div>
-    <TwelveLaboursFooter/>
+    <TwelveLaboursFooter linkComponent="router-link">
+    </TwelveLaboursFooter>
   </div>
 </template>
 
@@ -222,5 +227,12 @@ export default {
   align-content: space-around;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.footer-logo
+{
+  height: 12.5rem;   
+  width:14.56rem;  
+  white-space: nowrap;
 }
 </style>

@@ -11,9 +11,11 @@
     border-radius: 0.625rem;
     color: $grey;
     border-color:$lineColor1;
-    margin-top: 0.5rem;  
+    //margin-top: 0.5rem;  
     height: 2.5rem;
-   
+    max-width:100%;
+    width:20rem;
+
     &:hover {
       border-color: $lightGrey !important;
     }
@@ -44,9 +46,6 @@
     .el-input__inner {
       border-color: $lineColor2;
       color: $mediumGrey;
-      /*&:hover {
-        border-color: $lineColor2 !important;
-      }*/
     }
   }
 }
@@ -110,6 +109,13 @@
 .el-textarea{
   &__inner {
     border-radius: 0.625rem;
+    font: {
+      family:$font-family;
+      size:1rem;
+    }
+    width:100%;
+    max-width:43rem;
+    //margin-top: 0.5rem;
     &::placeholder {
       font-style: italic;
       color: $lineColor1;

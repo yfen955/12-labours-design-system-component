@@ -6,10 +6,10 @@
       :placeholder="placeholderText"
       :resize="resize"
       :maxlength="maxLength"
-      :minLength="minLength"
+      :minlength="minLength"
       :rows="numRows"
       :disabled="isDisabled"
-      @change="textChange"
+      @input="textChange"
     />
     <div class="label-word-count">
       Max length: {{maxLength}} - Used: {{value.length}} - Remaining: {{maxLength-(value.length)}}
@@ -28,11 +28,11 @@ export default {
     },
     maxLength: {
       type: Number,
-      required:true
+      required:true,
+      default: 150
     },
     minLength: {
-      type: Number,
-      default:3
+      type: Number
     },
     resize: {
       type: String,
@@ -62,7 +62,8 @@ export default {
   
   methods: {
     textChange: function(input) {
-      this.showMinSpan=this.value.length<this.minLength
+      if(this.minLength)
+        this.showMinSpan=this.value.length<this.minLength
       this.$emit('text-change', input)
     }
   }

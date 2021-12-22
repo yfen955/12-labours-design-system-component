@@ -37,7 +37,15 @@ $system-font:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-San
 $font-family: Arimo;
 
 // Viewport Sizes
-$viewport-sm: 48rem;
+/*$viewport-sm: 48rem;
 $viewport-md: 64rem;
 $viewport-lg: 120rem;
-$viewport-xlg: 120rem;
+$viewport-xlg: 120rem;*/
+
+$viewport-sm:768px;
+$viewport-md:1024px;
+$viewport-lg:1900px;
+$viewport-xlg:1900px;
+
+$md-start:calc($viewport-sm + 1px);  //769
+$md-end:calc($viewport-md - 1px);   //1023

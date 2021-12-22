@@ -18,6 +18,9 @@ h1 {
   line-height: 2.25rem;
   font-weight: 700;
   color:$app-primary-color;
+  @media only screen and (max-width:  $viewport-md) {
+    font-size: 1.5rem;
+  }
 }
 
 h2 {
@@ -39,6 +42,10 @@ h4 {
   line-height: 2rem;
   font-weight: 700;
   color:$app-primary-color;
+  @media only screen and (max-width:  $viewport-md) {
+    font-weight:600;
+    font-size: 1.2rem;
+  }
 }
 
 a {
