@@ -1,55 +1,70 @@
 <template>
-    <div>
-        <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane v-for="tab in tabs" :label="tab.label" :name="tab.name" :key="tab.name">
-          </el-tab-pane>
-        </el-tabs>
-    </div>
+  <div>
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane
+        v-for="tab in tabs"
+        :label="tab.label"
+        :name="tab.name"
+        :key="tab.name"
+      >
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 
 <script>
-  export default {
+export default {
+  name: "TabNav",
 
-    name: 'TabNav',
+  data() {
+    return {
+      activeName: "",
+    };
+  },
 
-    props: {
-        tabs: {
-        type: Array,
-        default: () => []
-        },
-        activeTab: {
-        type: String,
-        default: ''
-        }
+  props: {
+    tabs: {
+      type: Array,
+      default: () => [],
     },
-
-    methods: {
-      handleClick(tab) {
-        this.$emit('tabClick',tab.name)
-      } 
+    activeTab: {
+      type: String,
+      default: "",
     },
+  },
 
-    created(){
-      this.activeName = this.activeTab    
-    }
-  }
+  watch: {
+    activeTab: function() {
+      this.activeName = this.activeTab;
+    },
+  },
+
+  methods: {
+    handleClick(tab) {
+      this.$emit("tabClick", tab.name);
+    },
+  },
+
+  created() {
+    this.activeName = this.activeTab;
+  },
+};
 </script>
 
-
 <style lang="scss" scoped>
-@import '../../../assets/_variables.scss';
+@import "../../../assets/_variables.scss";
 
-::v-deep .el-tabs{
-  &__nav{
-    &.is-top{
-      .el-tabs__item {    
-        color:$text-color;
-        line-height:1.3rem;
-        font-size:1.13rem; 
-        height:2.25rem;   
+::v-deep .el-tabs {
+  &__nav {
+    &.is-top {
+      .el-tabs__item {
+        color: $text-color;
+        line-height: 1.3rem;
+        font-size: 1.13rem;
+        height: 2.25rem;
         &.is-active {
-          color:$app-primary-color;
-          font-weight:700;
+          color: $app-primary-color;
+          font-weight: 700;
         }
       }
     }
@@ -57,9 +72,8 @@
   &__active-bar {
     height: 0.3rem;
   }
-  &__header{
-    margin:0;
+  &__header {
+    margin: 0;
   }
 }
-
 </style>
