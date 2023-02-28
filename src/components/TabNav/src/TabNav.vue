@@ -59,12 +59,12 @@ export default {
     &.is-top {
       .el-tabs__item {
         color: $text-color;
-        line-height: 1.3rem;
-        font-size: 1.13rem;
+        line-height: 1rem;
+        font-size: 1.15rem;
         height: 2.25rem;
         &.is-active {
           color: $app-primary-color;
-          font-weight: 700;
+          font-weight: bold;
         }
       }
     }
@@ -72,8 +72,11 @@ export default {
   &__active-bar {
     height: 0.3rem;
   }
-  &__header {
-    margin: 0;
+  .el-tabs__nav-prev {
+    font-size: large;
+  }
+  .el-tabs__nav-next {
+    font-size: large;
   }
 }
 </style>
