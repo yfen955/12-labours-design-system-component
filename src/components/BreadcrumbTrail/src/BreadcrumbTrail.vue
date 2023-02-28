@@ -1,7 +1,9 @@
 <template>
-  <div class="breadcrumb">
-    <div v-for="item in breadcrumb" :key="item.label" class="breadcrumb-link">
-      <template v-if="linkComponent === 'nuxt-link' || linkComponent === 'router-link'">
+  <el-breadcrumb class="breadcrumb" separator-class="el-icon-arrow-right">
+    <el-breadcrumb-item v-for="item in breadcrumb" :key="item.label">
+      <template
+        v-if="linkComponent === 'nuxt-link' || linkComponent === 'router-link'"
+      >
         <component :is="linkComponent" :to="item.to">
           {{ item.label.toUpperCase() }}
         </component>
@@ -11,29 +13,32 @@
           {{ item.label.toUpperCase() }}
         </component>
       </template>
-      <i class="arrow el-icon-arrow-right"></i>
-    </div>
-    <div class="page-title">{{ formatTitle(title).toUpperCase() }}</div>
-  </div>
+    </el-breadcrumb-item>
+    <el-breadcrumb-item>
+      <a class="page-title">
+        {{ formatTitle(title).toUpperCase() }}
+      </a>
+    </el-breadcrumb-item>
+  </el-breadcrumb>
 </template>
 
 <script>
 export default {
-  name: 'BreadcrumbTrail',
+  name: "BreadcrumbTrail",
 
   props: {
     breadcrumb: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     title: {
       type: String,
-      default: ''
+      default: "",
     },
     linkComponent: {
       type: String,
-      default: 'nuxt-link'
-    }
+      default: "nuxt-link",
+    },
   },
 
   methods: {
@@ -45,54 +50,33 @@ export default {
      * @param {String} breadcrumb
      */
     formatTitle: function(title) {
-      const truncated = title.replace(/^(.{32}[^\s]*).*/, '$1')
-      return truncated.length === title.length
-        ? title
-        : `${truncated}...`
-    }
-  }
-}
+      const truncated = title.replace(/^(.{32}[^\s]*).*/, "$1");
+      return truncated.length === title.length ? title : `${truncated}...`;
+    },
+  },
+};
 </script>
 
-<style  lang="scss">
-@import '../../../assets/_variables.scss';
-.breadcrumb { 
-  height:2.5rem;
-  box-sizing: border-box; 
+<style lang="scss">
+@import "../../../assets/_variables.scss";
 
-  display: flex;
+.breadcrumb {
+  height: fit-content;
+  min-width: 20rem;
   background: $grey;
-  color: $cochlear;
-  font-size: 0.75rem;
-  line-height:0.88rem;
-  
-  padding-top:0.88rem;
-  padding-bottom:0.75rem;
-  padding-left: 3.75rem;
-   
-  .breadcrumb-link {
-    align-items: center;
-    display: flex;
-    flex-shrink: 0; 
-  }
-
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 3rem 0.75rem 3rem;
   a {
-    font-size:0.75rem;
-    line-height:0.88rem;
     text-decoration: none !important;
     color: $cochlear !important;
-    &:hover{
+    font-weight: normal;
+    &:hover {
       font-weight: bold;
     }
   }
-
-  .arrow {
-    font-size: 1rem;
-    padding:0 0.75rem;
-  }
-  
-  .page-title{
-    font-weight:bold;
-  }
+}
+.page-title {
+  font-weight: bold !important;
 }
 </style>
