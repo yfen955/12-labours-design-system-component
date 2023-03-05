@@ -1,0 +1,20 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import * as stories from "./tabnav.stories.js";
+
+<Meta title="Components/TabNav" />
+
+# TabNav
+
+Divide data collections which are related yet belong to different types.
+
+<Story name="WithTabs">{stories.WithTabs()}</Story>
+
+## Properties
+
+`tabs`: A list of items used to create tab navigation.
+
+`activetab`: Selected tab.
+
+## Events
+
+`tab-click`: Emitted when a tab has been clicked. Returns the tab name.
