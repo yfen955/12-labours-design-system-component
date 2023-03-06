@@ -4,12 +4,12 @@
       <template
         v-if="linkComponent === 'nuxt-link' || linkComponent === 'router-link'"
       >
-        <component :is="linkComponent" :to="item.to" class="text-bold">
+        <component :is="linkComponent" :to="item.to" class="hover-bold">
           {{ item.label.toUpperCase() }}
         </component>
       </template>
       <template v-else>
-        <component :is="linkComponent" :href="item.to" class="text-bold">
+        <component :is="linkComponent" :href="item.to" class="hover-bold">
           {{ item.label.toUpperCase() }}
         </component>
       </template>
@@ -73,7 +73,7 @@ export default {
     font-weight: normal;
   }
 }
-.text-bold {
+.hover-bold {
   &:hover {
     text-shadow: -0.02rem 0 0 currentColor, 0.02rem 0 0 currentColor;
   }
