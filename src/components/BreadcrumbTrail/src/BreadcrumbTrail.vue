@@ -72,7 +72,7 @@ export default {
     color: $cochlear !important;
     font-weight: normal;
     &:hover {
-      font-weight: bold;
+      text-shadow: -0.04ex 0 0 currentColor, 0.04ex 0 0 currentColor;
     }
   }
 }
