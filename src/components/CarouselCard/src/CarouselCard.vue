@@ -23,7 +23,7 @@
           />
           <img v-else :src="card.imageUrl" :alt="card.filename" />
         </div>
-        <br />
+        <p class="type-name">{{ card.type }}</p>
         <el-popover
           placement="top-start"
           trigger="hover"
@@ -94,7 +94,12 @@ export default {
 }
 .el-card {
   height: 19rem;
+  .type-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
   .model-name {
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
