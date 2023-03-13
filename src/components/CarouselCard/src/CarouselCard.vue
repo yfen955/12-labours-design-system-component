@@ -7,8 +7,8 @@
     height="20rem"
   >
     <el-carousel-item
-      v-show="cards.length > 0"
-      v-for="card in cards"
+      v-show="dataShowed.length > 0"
+      v-for="card in dataShowed"
       :key="card.filename"
     >
       <el-card>
@@ -79,6 +79,10 @@ export default {
     downloadThumbnail(url) {
       window.open(url);
     },
+  },
+
+  created() {
+    this.dataShowed = this.cards;
   },
 };
 </script>
