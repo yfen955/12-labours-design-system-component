@@ -12,16 +12,14 @@
       :key="card.filename"
     >
       <el-card>
-        <div v-if="card.type == 'Plot'" class="model-image">
-          <i class="el-icon-data-analysis"></i>
-        </div>
-        <div v-else class="model-image">
+        <div class="model-image">
+          <i v-if="card.type == 'Plot'" class="el-icon-data-analysis"></i>
           <img
-            v-if="card.imageUrl == ''"
-            :src="imagePlaceholder"
+            v-else
+            :src="card.imageUrl"
             :alt="card.filename"
+            @error="replaceByDefaultImage"
           />
-          <img v-else :src="card.imageUrl" :alt="card.filename" />
         </div>
         <p class="type-name">{{ card.type }}</p>
         <el-popover
@@ -68,6 +66,10 @@ export default {
   },
 
   methods: {
+    replaceByDefaultImage(error) {
+      error.target.src = this.imagePlaceholder;
+    },
+
     viewModel(model, uuid) {
       let route = this.$router.resolve({
         name: `data-maps-${model.toLowerCase()}-id`,
