@@ -1,0 +1,58 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import * as stories from "./carouselcard.stories.js";
+
+<Meta title="Components/CarouselCard" />
+
+# CarouselCard
+
+Loop a series of images or texts in a limited space, content will be displayed in card style.
+
+<Story name="WithCards">{stories.WithCards()}</Story>
+
+## Properties
+
+`cards`: A list of items used to create carousel card.
+
+```js
+export default {
+  data() {
+    return {
+      cards: [
+        {
+          type: "Thumbnail",
+          imageUrl: "imageUrl1",
+          filename: "filename1",
+          id: "id1",
+          imageDownload: "imageDownload1",
+        },
+        {
+          type: "Scaffold",
+          imageUrl: "imageUrl2",
+          filename: "filename2",
+          id: "id2",
+          imageDownload: "",
+        },
+        {
+          type: "Flatmap",
+          imageUrl: "",
+          filename: "filename3",
+          id: "id3",
+          imageDownload: "",
+        },
+        {
+          type: "Plot",
+          imageUrl: "imageUrl4",
+          filename: "filename4",
+          id: "id4",
+          imageDownload: "",
+        },
+      ],
+    };
+  },
+};
+```
+
+## Events
+
+`view-model`: Button event, model page will be open when button clicked
+`download-thumbnail`: Button event, thumbnail will be downloaded when button clicked
