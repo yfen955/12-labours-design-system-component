@@ -62,7 +62,7 @@ export default {
 
 .breadcrumb {
   height: fit-content;
-  min-width: 20rem;
+  min-width: 15rem;
   background: $grey;
   display: flex;
   flex-wrap: wrap;
