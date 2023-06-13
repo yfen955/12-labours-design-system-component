@@ -41,7 +41,11 @@
       </el-date-picker>
 
       <div style="padding: 2em;">
-        <tab-nav :tabs="tabs" :active-tab="activeTab" />
+        <tab-nav
+          :tabs="tabs"
+          :active-tab="currentTab"
+          v-on:tabClick="changeTab"
+        />
       </div>
       <pagination
         :total-count="totalCount"
@@ -128,7 +132,7 @@ export default {
         },
       ],
       value: "",
-      activeTab: "past",
+      // activeTab: "past",
       tabs: [
         {
           label: "Upcoming",
@@ -245,6 +249,17 @@ export default {
     },
     multiChange: function(input) {
       this.txtMulti = input;
+    },
+    changeTab: function(val) {
+      this.$router.push({
+        path: this.$route.path,
+        query: { datasetTab: val },
+      });
+    },
+  },
+  computed: {
+    currentTab: function() {
+      return this.$route.query.datasetTab;
     },
   },
 };
