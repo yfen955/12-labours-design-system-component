@@ -114,22 +114,22 @@ export default {
         {
           title: "data-and-models",
           displayTitle: "Data & Models",
-          href: "/data?type=dataset"
+          href: "/data?type=dataset",
         },
         {
           title: "resources",
           displayTitle: "Resources",
-          href: "/resources"
+          href: "/resources",
         },
         {
           title: "about",
           displayTitle: "About",
-          href: `/about`
+          href: "/about",
         },
         {
           title: "news-and-events",
           displayTitle: "News & Events",
-          href: "/news-and-events"
+          href: "/news-and-events",
         },
       ],
       value1: "",
@@ -282,6 +282,7 @@ export default {
 .content-body {
   padding-top: 1em;
 }
+
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -289,6 +290,7 @@ export default {
   margin-left: 10px;
   margin-top: 10px;
 }
+
 .tooltip {
   display: flex;
   align-content: space-around;
