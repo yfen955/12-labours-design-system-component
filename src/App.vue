@@ -1,24 +1,12 @@
 <template>
   <div id="app">
-    <TwelveLaboursHeader
-      linkComponent="router-link"
-      :currentPath="$route.name"
-    />
-    <breadcrumb-trail
-      :breadcrumb="breadcrumb"
-      :title="pageTitle"
-      linkComponent="router-link"
-    />
+    <TwelveLaboursHeader :auth="auth" :headerLinks="headerLinks" linkComponent="router-link" :currentPath="$route.name" />
+    <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" linkComponent="router-link" />
     <div class="content-body">
       <el-form label-position="top">
         <el-form-item label="What area would you like to know more">
           <el-select v-model="value" placeholder="Select">
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
           <div class="error">error message</div>
@@ -28,11 +16,7 @@
           <div class="error">error message</div>
         </el-form-item>
         <el-form-item label="Multi test">
-          <multiline-text
-            placeholder-text="Enter your details"
-            :max-length="maxLength"
-            @text-change="multiChange"
-          />
+          <multiline-text placeholder-text="Enter your details" :max-length="maxLength" @text-change="multiChange" />
           <div class="error">error message</div>
         </el-form-item>
       </el-form>
@@ -47,11 +31,7 @@
           v-on:tabClick="changeTab"
         />
       </div>
-      <pagination
-        :total-count="totalCount"
-        :page-size="pageSize"
-        @select-page="onPaginationChange"
-      />
+      <pagination :total-count="totalCount" :page-size="pageSize" @select-page="onPaginationChange" />
       <!--<pagination-menu 
         :page-size="pageSize"
         @update-page-size="updatePageSize"
@@ -79,23 +59,14 @@
       </div>
       <el-row type="flex" justify="center">
         <el-select disabled v-model="selectVal" placeholder="Select2">
-          <el-option-group
-            v-for="group in selectOpts"
-            :key="group.label"
-            :label="group.label"
-          >
-            <el-option
-              v-for="item in group.options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
+          <el-option-group v-for="group in selectOpts" :key="group.label" :label="group.label">
+            <el-option v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-option-group>
         </el-select>
       </el-row>
       <div>
-        <carousel-card :cards="cards" />
+        <carousel-card :cards="cards_list" @model="viewModel" @thumbnail="viewThumbnail" />
       </div>
     </div>
     <TwelveLaboursFooter linkComponent="router-link"> </TwelveLaboursFooter>
@@ -108,6 +79,32 @@ export default {
 
   data() {
     return {
+      auth: {
+        loggedIn: false,
+        user: null,
+      },
+      headerLinks: [
+        {
+          title: "data-and-models",
+          displayTitle: "Data & Models",
+          href: "/data?type=dataset",
+        },
+        {
+          title: "resources",
+          displayTitle: "Resources",
+          href: "/resources",
+        },
+        {
+          title: "about",
+          displayTitle: "About",
+          href: "/about",
+        },
+        {
+          title: "news-and-events",
+          displayTitle: "News & Events",
+          href: "/news-and-events",
+        },
+      ],
       value1: "",
       options: [
         {
@@ -207,7 +204,7 @@ export default {
       maxLength: 100,
       minLength: 7,
       txtMulti: "",
-      cards: [
+      cards_list: [
         {
           type: "Thumbnail",
           imageUrl: "imageUrl1",
@@ -240,16 +237,27 @@ export default {
     };
   },
   methods: {
-    onPaginationChange: function(page) {
+    onPaginationChange: function (page) {
       this.currentPage = page;
     },
-    updatePageSize: function(limit) {
+    updatePageSize: function (limit) {
       this.pageSize = limit === "View All" ? 100 : limit;
       this.pageCount = limit === "View All" ? 100 : limit;
     },
-    multiChange: function(input) {
+    multiChange: function (input) {
       this.txtMulti = input;
     },
+    viewModel(model, uuid) {
+      let route = this.$router.resolve({
+        name: `data-maps-${model.toLowerCase()}-id`,
+        params: { id: uuid },
+        query: { access: this.$route.query.access }
+      });
+      window.open(route.href);
+    },
+    viewThumbnail(url) {
+      window.open(url);
+    }
     changeTab: function(val) {
       this.$router.push({
         path: this.$route.path,
@@ -269,6 +277,7 @@ export default {
 .content-body {
   padding-top: 1em;
 }
+
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -276,6 +285,7 @@ export default {
   margin-left: 10px;
   margin-top: 10px;
 }
+
 .tooltip {
   display: flex;
   align-content: space-around;
