@@ -46,7 +46,7 @@
             <component :is="linkComponent" to="/profile">
               <el-button>Account</el-button>
             </component>
-            <component :is="linkComponent" @click.native="signout(auth)" to="/">
+            <component :is="linkComponent" @click.native="signOut" to="/">
               Log out
             </component>
           </div>
@@ -199,13 +199,11 @@ export default {
 
   methods: {
     /* Signs out of current strategy */
-    signout: function (auth) {
-      auth.logout().then(() => {
-        this.$toast.success("Logged out of 12 Labours", {
-          duration: 3000,
-          position: "bottom-right",
-        });
-      });
+    signOut: function () {
+      this.auth.logout().then(() => {
+        this.$toast.success('Logged out of 12 Labours', { duration: 3000, position: 'bottom-right' })
+        this.$emit("isSignOut", true)
+      })
     },
 
     /**
