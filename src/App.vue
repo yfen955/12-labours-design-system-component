@@ -25,7 +25,11 @@
       </el-date-picker>
 
       <div style="padding: 2em;">
-        <tab-nav :tabs="tabs" :active-tab="activeTab" />
+        <tab-nav
+          :tabs="tabs"
+          :active-tab="currentTab"
+          v-on:tabClick="changeTab"
+        />
       </div>
       <pagination :total-count="totalCount" :page-size="pageSize" @select-page="onPaginationChange" />
       <!--<pagination-menu 
@@ -125,7 +129,7 @@ export default {
         },
       ],
       value: "",
-      activeTab: "past",
+      // activeTab: "past",
       tabs: [
         {
           label: "Upcoming",
@@ -254,6 +258,17 @@ export default {
     viewThumbnail(url) {
       window.open(url);
     }
+    changeTab: function(val) {
+      this.$router.push({
+        path: this.$route.path,
+        query: { datasetTab: val },
+      });
+    },
+  },
+  computed: {
+    currentTab: function() {
+      return this.$route.query.datasetTab;
+    },
   },
 };
 </script>
