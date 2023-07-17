@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TwelveLaboursHeader :auth="auth" :headerLinks="headerLinks" linkComponent="router-link" :currentPath="$route.name" />
+    <TwelveLaboursHeader :auth="auth" :headerLinks="headerLinks" linkComponent="router-link" :currentPath="$route.name" @isSignOut="signOut"/>
     <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" linkComponent="router-link" />
     <div class="content-body">
       <el-form label-position="top">
@@ -257,7 +257,12 @@ export default {
     },
     viewThumbnail(url) {
       window.open(url);
-    }
+    },
+    signOut(bool) {
+      if (bool) {
+        console.log(bool);
+      }
+    },
     changeTab: function(val) {
       this.$router.push({
         path: this.$route.path,
