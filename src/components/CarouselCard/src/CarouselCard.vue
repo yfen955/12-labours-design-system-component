@@ -1,45 +1,20 @@
 <template>
-  <el-carousel
-    :autoplay="false"
-    trigger="click"
-    type="card"
-    arrow="always"
-    height="20rem"
-  >
-    <el-carousel-item
-      v-show="dataShowed.length > 0"
-      v-for="card in dataShowed"
-      :key="card.filename"
-    >
+  <el-carousel :autoplay="false" trigger="click" type="card" arrow="always" height="20rem">
+    <el-carousel-item v-show="dataShowed.length > 0" v-for="card in dataShowed" :key="card.filename">
       <el-card>
-        <div class="model-image">
+        <div class="card-image">
           <i v-if="card.type == 'Plot'" class="el-icon-data-analysis"></i>
-          <img
-            v-else
-            :src="card.imageUrl"
-            :alt="card.filename"
-            @error="replaceByDefaultImage"
-          />
+          <img v-else :src="card.url" :alt="card.filename" @error="replaceByDefaultImage" />
         </div>
         <p class="type-name">{{ card.type }}</p>
-        <el-popover
-          placement="top-start"
-          trigger="hover"
-          :content="card.filename"
-        >
-          <p slot="reference" class="model-name">
+        <el-popover placement="top-start" trigger="hover" :content="card.filename">
+          <p slot="reference" class="card-name">
             {{ card.filename }}
           </p>
         </el-popover>
-        <div class="model-button">
-          <el-button
-            v-if="card.type == 'Thumbnail'"
-            @click="downloadThumbnail(card.imageDownload)"
-          >
-            Download
-          </el-button>
-          <el-button v-else @click="viewModel(card.type, card.id)">
-            View {{ card.type }}
+        <div class="card-button">
+          <el-button @click="view(card.type, card.url, card.id)">
+            {{ card.type }}
           </el-button>
         </div>
       </el-card>
@@ -70,16 +45,8 @@ export default {
       error.target.src = this.imagePlaceholder;
     },
 
-    viewModel(model, uuid) {
-      let route = this.$router.resolve({
-        name: `data-maps-${model.toLowerCase()}-id`,
-        params: { id: uuid },
-      });
-      window.open(route.href);
-    },
-
-    downloadThumbnail(url) {
-      window.open(url);
+    view(type, url, uuid) {
+      this.$emit("cardInfo", type, url, uuid);
     },
   },
 
@@ -93,30 +60,37 @@ export default {
 .el-icon-data-analysis {
   font-size: 5rem;
 }
+
 .el-carousel__item {
   margin-top: 0.5rem;
   margin-left: calc((50% - 17rem) / 2);
   width: 17rem;
 }
+
 .el-card {
   height: 19rem;
+
   .type-name {
     font-weight: bold;
     margin-bottom: 0.25rem;
   }
-  .model-name {
+
+  .card-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .model-image {
+
+  .card-image {
     width: 10rem;
     height: 9rem;
+
     img {
-      width: 10rem;
+      width: 9rem;
     }
   }
-  .model-button {
+
+  .card-button {
     margin-top: 1rem;
   }
 }

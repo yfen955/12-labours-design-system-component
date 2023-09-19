@@ -3,6 +3,37 @@ import StoryRouter from 'storybook-vue-router';
 
 
 const defaultProps = () => ({
+  auth: {
+    loggedIn: false,
+    user: null,
+  },
+  headerLinks: [
+    {
+      title: "data-and-models",
+      displayTitle: "Data & Models",
+      href: "/data?type=dataset"
+    },
+    {
+      title: "resources",
+      displayTitle: "Resources",
+      href: "/resources"
+    },
+    {
+      title: "about",
+      displayTitle: "About",
+      href: `/about`
+    },
+    {
+      title: "news-and-events",
+      displayTitle: "News & Events",
+      href: "/news-and-events"
+    },
+    {
+      title: "search",
+      displayTitle: "Search",
+      href: "/search"
+    }
+  ],
   currentPath: { default: "/" },
 })
 
@@ -17,8 +48,11 @@ export const Primary = () => ({
   template: `
     <div>
       <TwelveLaboursHeader 
-        linkComponent="router-link" 
-        :currentPath="$route.name"/>
+        :auth="$auth" 
+        :headerLinks="headerLinks"
+        linkComponent="router-link"
+        :currentPath="$route.name"
+      />
     </div>
   `
 })

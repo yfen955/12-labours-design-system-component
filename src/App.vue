@@ -1,24 +1,13 @@
 <template>
   <div id="app">
-    <TwelveLaboursHeader
-      linkComponent="router-link"
-      :currentPath="$route.name"
-    />
-    <breadcrumb-trail
-      :breadcrumb="breadcrumb"
-      :title="pageTitle"
-      linkComponent="router-link"
-    />
+    <TwelveLaboursHeader :auth="auth" :headerLinks="headerLinks" linkComponent="router-link" :currentPath="$route.name"
+      @isSignOut="signOut" />
+    <breadcrumb-trail :breadcrumb="breadcrumb" :title="pageTitle" linkComponent="router-link" />
     <div class="content-body">
       <el-form label-position="top">
         <el-form-item label="What area would you like to know more">
           <el-select v-model="value" placeholder="Select">
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
           <div class="error">error message</div>
@@ -28,11 +17,7 @@
           <div class="error">error message</div>
         </el-form-item>
         <el-form-item label="Multi test">
-          <multiline-text
-            placeholder-text="Enter your details"
-            :max-length="maxLength"
-            @text-change="multiChange"
-          />
+          <multiline-text placeholder-text="Enter your details" :max-length="maxLength" @text-change="multiChange" />
           <div class="error">error message</div>
         </el-form-item>
       </el-form>
@@ -41,17 +26,9 @@
       </el-date-picker>
 
       <div style="padding: 2em;">
-        <tab-nav
-          :tabs="tabs"
-          :active-tab="currentTab"
-          v-on:tabClick="changeTab"
-        />
+        <tab-nav :tabs="tabs" :active-tab="currentTab" v-on:tabClick="changeTab" />
       </div>
-      <pagination
-        :total-count="totalCount"
-        :page-size="pageSize"
-        @select-page="onPaginationChange"
-      />
+      <pagination :total-count="totalCount" :page-size="pageSize" @select-page="onPaginationChange" />
       <!--<pagination-menu 
         :page-size="pageSize"
         @update-page-size="updatePageSize"
@@ -79,23 +56,14 @@
       </div>
       <el-row type="flex" justify="center">
         <el-select disabled v-model="selectVal" placeholder="Select2">
-          <el-option-group
-            v-for="group in selectOpts"
-            :key="group.label"
-            :label="group.label"
-          >
-            <el-option
-              v-for="item in group.options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            >
+          <el-option-group v-for="group in selectOpts" :key="group.label" :label="group.label">
+            <el-option v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-option-group>
         </el-select>
       </el-row>
       <div>
-        <carousel-card :cards="cards" />
+        <carousel-card2 :cards="cards_list" v-if="!isLoading" @cardInfo="viewContent" />
       </div>
     </div>
     <TwelveLaboursFooter linkComponent="router-link"> </TwelveLaboursFooter>
@@ -108,6 +76,32 @@ export default {
 
   data() {
     return {
+      auth: {
+        loggedIn: false,
+        user: null,
+      },
+      headerLinks: [
+        {
+          title: "data-and-models",
+          displayTitle: "Data & Models",
+          href: "/data?type=dataset",
+        },
+        {
+          title: "resources",
+          displayTitle: "Resources",
+          href: "/resources",
+        },
+        {
+          title: "about",
+          displayTitle: "About",
+          href: "/about",
+        },
+        {
+          title: "news-and-events",
+          displayTitle: "News & Events",
+          href: "/news-and-events",
+        },
+      ],
       value1: "",
       options: [
         {
@@ -207,50 +201,63 @@ export default {
       maxLength: 100,
       minLength: 7,
       txtMulti: "",
-      cards: [
+      cards_list: [
         {
           type: "Thumbnail",
-          imageUrl: "imageUrl1",
+          url: "imageUrl1",
           filename: "filename1",
           id: "id1",
-          imageDownload: "imageDownload1",
         },
         {
           type: "Scaffold",
-          imageUrl: "imageUrl2",
+          url: "imageUrl2",
           filename: "filename2",
           id: "id2",
-          imageDownload: "",
         },
         {
           type: "Flatmap",
-          imageUrl: "",
+          imaurlgeUrl: "",
           filename: "filename3",
           id: "id3",
-          imageDownload: "",
         },
         {
           type: "Plot",
-          imageUrl: "imageUrl4",
+          url: "imageUrl4",
           filename: "filename4",
           id: "id4",
-          imageDownload: "",
         },
       ],
     };
   },
   methods: {
-    onPaginationChange: function(page) {
+    onPaginationChange: function (page) {
       this.currentPage = page;
     },
-    updatePageSize: function(limit) {
+    updatePageSize: function (limit) {
       this.pageSize = limit === "View All" ? 100 : limit;
       this.pageCount = limit === "View All" ? 100 : limit;
     },
-    multiChange: function(input) {
+    multiChange: function (input) {
       this.txtMulti = input;
     },
-    changeTab: function(val) {
+    viewContent(type, url, uuid) {
+      if (type === "Thumbnail") {
+        window.open(url);
+      } else if (type === "Scaffold" || type === "Plot") {
+        const route = this.$router.resolve({
+          name: `data-maps-${type.toLowerCase()}-id`,
+          params: { id: uuid },
+          query: { access: this.$route.query.access },
+        });
+        window.open(route.href);
+      }
+    },
+    signOut(bool) {
+      if (bool) {
+        console.log(bool);
+      }
+    },
+    changeTab: function (val) {
       this.$router.push({
         path: this.$route.path,
         query: { datasetTab: val },
@@ -258,7 +265,7 @@ export default {
     },
   },
   computed: {
-    currentTab: function() {
+    currentTab: function () {
       return this.$route.query.datasetTab;
     },
   },
@@ -269,6 +276,7 @@ export default {
 .content-body {
   padding-top: 1em;
 }
+
 .radio-group {
   display: flex;
   flex-direction: column;
@@ -276,6 +284,7 @@ export default {
   margin-left: 10px;
   margin-top: 10px;
 }
+
 .tooltip {
   display: flex;
   align-content: space-around;
