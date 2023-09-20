@@ -55,18 +55,18 @@ export default {
 
     li.more, li.number {
       &:first-child{
-        margin-left: 1rem;
+        margin-left: 0;
       }
 
       &:last-child{
-        margin-right: 1rem;
+        margin-right: 0;
       }
 
       background: $cochlear;
       border: 1px solid $blue;
       color: $blue;
 
-      margin-left: 0.5rem;
+      margin: 0 0.25rem 0 0.25rem;
       border-radius: 50%;
       min-width: 2rem; 
       height: 2rem; 
