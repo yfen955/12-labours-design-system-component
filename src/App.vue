@@ -67,7 +67,7 @@
       </div>
       <div>
         <el-button @click="changeUserType">Change User Type</el-button>
-        <dashboard :user="user_data" :table_data="table_data" :selected_columns="selected_columns" v-on:open-page="showPage" />
+        <dashboard :user="user_data" :table_data="table_data" :columns_list="columns_list" :default_columns="default_columns" v-on:open-page="showPage" />
       </div>
     </div>
     <TwelveLaboursFooter linkComponent="router-link"> </TwelveLaboursFooter>
@@ -261,7 +261,8 @@ export default {
           logs: 'Link'
         },
       ],
-      selected_columns: ['Workflow', 'Subject ID', 'Progress', 'Actions'],
+      columns_list: ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Logs', 'Actions'],
+      default_columns: ['Workflow', 'Subject ID', 'Progress', 'Actions'],
     };
   },
   methods: {
@@ -299,10 +300,14 @@ export default {
       });
     },
     changeUserType: function() {
-      if (this.user_data.type_name === "Researcher")
+      if (this.user_data.type_name === "Researcher") {
         this.user_data.type_name = "Clinician";
-      else
+        this.columns_list = ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Actions'];
+      }
+      else {
         this.user_data.type_name = "Researcher";
+        this.columns_list = ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Logs', 'Actions'];
+      }
     },
     showPage: function(val) {
       this.$message.success(val, { duration: 3000, position: 'bottom-right' })

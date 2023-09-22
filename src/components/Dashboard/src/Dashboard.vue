@@ -106,6 +106,7 @@ export default {
 
   data: () => {
     return {
+      selected_columns: [],
       workflow_filter: [],
       subject_filter: [],
       searchContent: '',
@@ -122,13 +123,18 @@ export default {
       type: Array,
       default: () => [],
     },
-    selected_columns: {
+    columns_list: {
+      type: Array,
+      default: () => [],
+    },
+    default_columns: {
       type: Array,
       default: () => [],
     },
   },
 
   created: function() {
+    this.selected_columns = [...this.default_columns];
     let workflow_list = this.table_data.map(a => a.workflow);
     this.formFilter(workflow_list, this.workflow_filter);
     let subject_list = this.table_data.map(a => a.subject);
@@ -156,12 +162,6 @@ export default {
         })
         return data;
       }
-    },
-    columns_list: function() {
-      if (this.user.type_name && this.user.type_name === 'Researcher')
-        return ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Logs', 'Actions'];
-      else
-        return ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Actions'];
     },
   },
 
