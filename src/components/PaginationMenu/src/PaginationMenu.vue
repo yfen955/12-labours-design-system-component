@@ -24,7 +24,9 @@
         class="icon-item"
         :command="option"
       >
-        {{ option }}
+        <span :class="pageSize === option ? 'selected' : ''">
+          {{ option }}
+        </span>
         <svgicon
           v-if="pageSize === option"
           icon="check"
@@ -106,5 +108,10 @@ export default {
   margin-right: -0.38rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
+}
+
+.selected {
+  font-weight: 700;
+  color: $app-primary-color;
 }
 </style>

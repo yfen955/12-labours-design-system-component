@@ -33,7 +33,7 @@
         :page-size="pageSize"
         @update-page-size="updatePageSize"
       />-->
-      <div style="width:500px;padding:40px">
+      <div>
         <el-collapse accordion>
           <el-collapse-item title="I am Item1">
             <span>Item1</span>
@@ -63,7 +63,11 @@
         </el-select>
       </el-row>
       <div>
-        <carousel-card2 :cards="cards_list" v-if="!isLoading" @cardInfo="viewContent" />
+        <carousel-card :cards="cards_list" @cardInfo="viewContent" />
+      </div>
+      <div>
+        <el-button @click="changeUserType">Change User Type</el-button>
+        <dashboard :user="user_data" :table_data="table_data" :columns_list="columns_list" :default_columns="default_columns" v-on:open-page="showPage" />
       </div>
     </div>
     <TwelveLaboursFooter linkComponent="router-link"> </TwelveLaboursFooter>
@@ -227,6 +231,38 @@ export default {
           id: "id4",
         },
       ],
+      user_data: { type_name: "Researcher" },
+      table_data: [
+        {
+          workflow: 'Cardiac',
+          subject: 'Patient 1',
+          progress: 'Step 4/5',
+          time: '1.5 mins',
+          age: '40',
+          height: '170',
+          logs: 'Link'
+        },
+        {
+          workflow: 'Shoulder',
+          subject: 'Patient 1',
+          progress: 'Finished',
+          time: '60 mins',
+          age: '50',
+          height: '160',
+          logs: 'Link'
+        },
+        {
+          workflow: 'Shoulder',
+          subject: 'Patient 2',
+          progress: 'Step 2/3',
+          time: '150 mins',
+          age: '60',
+          height: '150',
+          logs: 'Link'
+        },
+      ],
+      columns_list: ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Logs', 'Actions'],
+      default_columns: ['Workflow', 'Subject ID', 'Progress', 'Actions'],
     };
   },
   methods: {
@@ -263,6 +299,19 @@ export default {
         query: { datasetTab: val },
       });
     },
+    changeUserType: function() {
+      if (this.user_data.type_name === "Researcher") {
+        this.user_data.type_name = "Clinician";
+        this.columns_list = ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Actions'];
+      }
+      else {
+        this.user_data.type_name = "Researcher";
+        this.columns_list = ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Logs', 'Actions'];
+      }
+    },
+    showPage: function(val) {
+      this.$message.success(val, { duration: 3000, position: 'bottom-right' })
+    }
   },
   computed: {
     currentTab: function () {
@@ -296,5 +345,10 @@ export default {
   height: 12.5rem;
   width: 14.56rem;
   white-space: nowrap;
+}
+
+.el-collapse {
+  min-width: 250px;
+  padding: 40px
 }
 </style>

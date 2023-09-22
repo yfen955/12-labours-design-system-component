@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import * as stories from "./dashboard.stories.js";
+
+<Meta title="Components/Dashboard" />
+
+# Dashboard
+
+Display several processes of workflow for Researchers and Clinicians.
+
+<Story name="WithProcess">{stories.WithProcess()}</Story>
+
+## Properties
+
+`user_data`: User's data, including user type that determines which dashboard to use.
+
+`table_data`: A list of process data.
+
+`columns_list`: All columns in the dashboard table.
+
+`default_columns`: Default selected columns.
+
+## Events
+
+`open-page`: Emitted when an link has been clicked. Returns the target page to be opened.

@@ -7,6 +7,7 @@
       :total="totalCount"
       :current-page="selected"
       @current-change="selectPage"
+      :pager-count="5"
     />
   </div>
 </template>

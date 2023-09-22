@@ -16,6 +16,7 @@ import PaginationMenu from "./PaginationMenu";
 import Tooltip from "./Tooltip";
 import MultilineText from "./MultilineText";
 import CarouselCard from "./CarouselCard";
+import Dashboard from "./Dashboard";
 
 import "@/assets/icons";
 
@@ -30,6 +31,7 @@ const Components = {
   Tooltip,
   MultilineText,
   CarouselCard,
+  Dashboard
 };
 
 Object.keys(Components).forEach((component) => {
