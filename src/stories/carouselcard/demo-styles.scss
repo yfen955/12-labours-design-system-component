@@ -1,0 +1,70 @@
+@import '../../assets/_variables.scss';
+
+.el-icon-data-analysis,
+.el-icon-first-aid-kit {
+  font-size: 8rem;
+}
+
+.el-carousel__item {
+  margin-top: 0.5rem;
+  margin-left: calc((50% - 17rem) / 2);
+  width: 17rem;
+}
+
+.el-card {
+  height: 19rem;
+
+  .type-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-image {
+    width: 13rem;
+    height: 9rem;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .card-button {
+    margin-top: 1rem;
+  }
+
+  .segmentation-btn {
+    padding: 0.25rem 1rem;
+  }
+}
+
+::v-deep .el-checkbox__input.is-indeterminate .el-checkbox__inner:before {
+  border-bottom: 0.1rem solid #00467f;
+  background-color: $app-primary-color;
+}
+
+::v-deep .el-checkbox__inner {
+  width: 1rem;
+  height: 1rem;
+}
+
+::v-deep .el-checkbox__input.is-checked .el-checkbox__inner:after {
+  height: 0.5rem !important;
+  left: 0.3rem !important;
+  top: 0.1rem !important;
+  transform: rotate(45deg) scale(1.6) !important;
+}
+
+.el-checkbox + .el-checkbox {
+  margin-left: 0.75rem;
+}
+
+.el-button {
+  padding: 0.25rem 1.5rem;
+}

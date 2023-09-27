@@ -39,7 +39,7 @@
           :filter-method="filterHandler"
         >
           <template slot-scope="scope">
-            <a @click="openPage(`Workflow ${scope.row.workflow}`)">
+            <a @click="openPage('workflow', scope.row.workflow)">
               {{ scope.row.workflow }}
             </a>
           </template>
@@ -70,7 +70,7 @@
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item v-for="i in 5" :key="i">
-                  <a @click="openPage(`Step ${i}`)">
+                  <a @click="openPage('dataset', `Step ${i}`)">
                     Step {{ i }}
                   </a>
                 </el-dropdown-item>
@@ -84,7 +84,7 @@
         <el-table-column v-if="user.type_name === 'Researcher' && selected_columns.includes('Logs')" prop="logs" label="Logs"></el-table-column>
         <el-table-column v-if="selected_columns.includes('Actions')" label="Actions">
           <template slot-scope="scope">
-            <a @click="openPage('View Dataset')">
+            <a @click="openPage('dataset', 'id')">
               View Dataset
             </a>, 
             <a @click="deleteRow(scope.$index)">
@@ -237,8 +237,8 @@ export default {
         this.showAll = false;
     },
 
-    openPage(val) {
-      this.$emit("open-page", val);
+    openPage(type, val) {
+      this.$emit("open-page", type, val);
     }
   }
 }

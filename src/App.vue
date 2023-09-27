@@ -63,7 +63,7 @@
         </el-select>
       </el-row>
       <div>
-        <carousel-card :cards="cards_list" @cardInfo="viewContent" />
+        <carousel-card :cards="cards_list" :all_models="all_models" @cardInfo="viewContent" />
       </div>
       <div>
         <el-button @click="changeUserType">Change User Type</el-button>
@@ -205,6 +205,7 @@ export default {
       maxLength: 100,
       minLength: 7,
       txtMulti: "",
+      all_models: new Set(['Thumbnail', 'Scaffold', 'Flatmap', 'Plot']),
       cards_list: [
         {
           type: "Thumbnail",
@@ -221,8 +222,8 @@ export default {
         {
           type: "Flatmap",
           imaurlgeUrl: "",
-          filename: "filename3",
-          id: "id3",
+          filename: "Pig",
+          id: "Pig",
         },
         {
           type: "Plot",
@@ -309,8 +310,8 @@ export default {
         this.columns_list = ['Workflow', 'Subject ID', 'Progress', 'Time', 'Age', 'Height', 'Logs', 'Actions'];
       }
     },
-    showPage: function(val) {
-      this.$message.success(val, { duration: 3000, position: 'bottom-right' })
+    showPage: function(type, val) {
+      this.$message.success(`${type}, ${val}`, { duration: 3000, position: 'bottom-right' })
     }
   },
   computed: {

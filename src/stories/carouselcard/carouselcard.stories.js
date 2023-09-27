@@ -1,3 +1,4 @@
+import './demo-styles.scss';
 import CarouselCard from "@/components/CarouselCard/src/CarouselCard.vue";
 
 export default {
@@ -10,41 +11,38 @@ export const WithCards = () => {
     component: { CarouselCard },
     data() {
       return {
-        cards: [
+        all_models: new Set(['Thumbnail', 'Scaffold', 'Flatmap', 'Plot']),
+        cards_list: [
           {
             type: "Thumbnail",
-            imageUrl: "imageUrl1",
+            url: "imageUrl1",
             filename: "filename1",
             id: "id1",
-            imageDownload: "imageDownload1",
           },
           {
             type: "Scaffold",
-            imageUrl: "imageUrl2",
+            url: "imageUrl2",
             filename: "filename2",
             id: "id2",
-            imageDownload: "",
           },
           {
             type: "Flatmap",
-            imageUrl: "",
-            filename: "filename3",
-            id: "id3",
-            imageDownload: "",
+            imaurlgeUrl: "",
+            filename: "Pig",
+            id: "Pig",
           },
           {
             type: "Plot",
-            imageUrl: "imageUrl4",
+            url: "imageUrl4",
             filename: "filename4",
             id: "id4",
-            imageDownload: "",
           },
         ],
       };
     },
     template: `
         <div>
-            <carousel-card :cards=cards />
+          <carousel-card :cards="cards_list" :all_models="all_models" />
         </div>
     `,
   };
