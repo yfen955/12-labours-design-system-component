@@ -31,7 +31,7 @@
             <i v-if="card.type == 'MRI'" class="el-icon-first-aid-kit"></i>
             <img
               v-if="card.type == 'Flatmap'"
-              :src="flatmapImg[card.id]"
+              :src="base64_dict[card.id]"
               :alt="card.filename"
               @error="replaceByDefaultImage"
             />
@@ -73,13 +73,21 @@ export default {
       showAll: true,
       isIndeterminate: false,
       selected_models: [],
-      imagePlaceholder: require("@/assets/img/sparc-logo/12-labours-logo-black.png"),
-      flatmapImg: {
-        Rat: require('@/assets/img/flatmap-thumbnails/rat.png'),
-        Mouse: require('@/assets/img/flatmap-thumbnails/mouse.png'),
-        Human: require('@/assets/img/flatmap-thumbnails/human.png'),
-        Pig: require('@/assets/img/flatmap-thumbnails/pig.png'),
-        Cat: require('@/assets/img/flatmap-thumbnails/cat.png')
+      image_dict: {
+        imagePlaceholder: require('../../../assets/img/sparc-logo/12-labours-logo-black.png'),
+        Rat: require('../../../assets/img/flatmap-thumbnails/rat.png'),
+        Mouse: require('../../../assets/img/flatmap-thumbnails/mouse.png'),
+        Human: require('../../../assets/img/flatmap-thumbnails/human.png'),
+        Pig: require('../../../assets/img/flatmap-thumbnails/pig.png'),
+        Cat: require('../../../assets/img/flatmap-thumbnails/cat.png')
+      },
+      base64_dict: {
+        imagePlaceholder: '',
+        Rat: '',
+        Mouse: '',
+        Human: '',
+        Pig: '',
+        Cat: ''
       },
     };
   },
@@ -96,9 +104,16 @@ export default {
     },
   },
 
+  created() {
+    this.dataShowed = this.cards;
+    this.selected_models = [...this.all_models];
+
+    this.imgToBase64();
+  },
+
   methods: {
     replaceByDefaultImage(error) {
-      error.target.src = this.imagePlaceholder;
+      error.target.src = this.base64_dict.imagePlaceholder;
     },
 
     view(type, url, uuid) {
@@ -126,11 +141,20 @@ export default {
         this.selected_models.length > 0;
       this.updateDataShowed();
     },
-  },
 
-  created() {
-    this.dataShowed = this.cards;
-    this.selected_models = [...this.all_models];
+    async imgToBase64() {
+      for (let src in this.image_dict) {
+        await fetch(this.image_dict[src])
+          .then((res) => res.blob())
+          .then((blob) => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              this.base64_dict[src] = reader.result;
+            };
+            reader.readAsDataURL(blob);
+          });
+      }
+    }
   },
 };
 </script>
